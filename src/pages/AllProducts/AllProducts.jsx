@@ -5,10 +5,11 @@ import Row from 'react-bootstrap/esm/Row';
 import Container from 'react-bootstrap/esm/Container';
 
 import camisa from '../../images/products/camisetao-laranja.webp'
-import Produt from './Produt/Produt'
+import Molde from './Molde/Molde'
 
 import './styles.css'
 import Topbar from '../../components/NavBar/NavBar';
+import { Link } from 'react-router-dom';
 
 // const produtos = [
 //   {
@@ -53,7 +54,7 @@ import Topbar from '../../components/NavBar/NavBar';
 //ver soibre RATIO opara as imagens respoeotarem um tanmanho
 
 
-function Products() {
+function AllProducts() {
 
   const [ produtos, setProdutos ] = useState([])
 
@@ -70,10 +71,11 @@ function Products() {
       <br />
       <br />
       <Container>
+        <Link className='tag-a' to='/produtos/prod'>
         <Row>
           {produtos.map((prod) => {
             return (
-              <Produt 
+              <Molde 
               key={prod.masculino}
               image={camisa}
               valor={prod.masculino.valor}
@@ -83,7 +85,7 @@ function Products() {
           })}
           {produtos.map((prod) => {
             return (
-              <Produt 
+              <Molde 
               key={prod.feminino}
               image={camisa}
               valor={prod.feminino.valor}
@@ -93,6 +95,7 @@ function Products() {
           })}
           
         </Row>
+        </Link>
       </Container>
 
     </>
@@ -100,4 +103,4 @@ function Products() {
 }
 
 
-export default Products;
+export default AllProducts;

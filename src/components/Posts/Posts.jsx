@@ -7,6 +7,7 @@ import camisa from '../../images/products/camisetao-laranja.webp'
 import Post from './Post/Post'
 
 import './styles.css'
+import { Link } from 'react-router-dom';
 
 const produtos = [
   {
@@ -52,6 +53,7 @@ function Posts() {
   return (
     <>
       <Container>
+        <Link to='/produtos/prod' className='tag-a'>
         <Row>
           {produtos.map((prod, index) => {
             return (
@@ -64,6 +66,7 @@ function Posts() {
             )  
           })}
         </Row>
+        </Link>
       </Container>
 
     </>

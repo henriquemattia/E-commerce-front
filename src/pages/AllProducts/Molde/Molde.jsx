@@ -6,7 +6,7 @@ import Col from 'react-bootstrap/esm/Col';
 import './styles.css'
 
 
-function Produt(props) {
+function Molde(props) {
   return (
   <>
         <Col className='col-6'> 
@@ -26,4 +26,4 @@ function Produt(props) {
   );
 }
 
-export default Produt;
+export default Molde;

@@ -1,0 +1,29 @@
+.imagem1 {
+    margin-top: 80px;
+    width: 100%;
+    height: auto;
+}
+
+.abaixo {
+    margin-top: 20px;
+    height: 90px;
+    width: auto;
+}
+
+.name{
+    margin-top: 20px;
+    font-size: 1.7rem;
+}
+
+.tamanho{
+    font-size: 1.7rem;
+}
+.desc_price{
+    color: rgb(138, 138, 138);
+    text-decoration: line-through;
+}
+
+.price {
+    font-weight: 700;
+    margin-left: 15px;
+}

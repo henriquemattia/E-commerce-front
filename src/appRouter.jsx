@@ -7,8 +7,9 @@ import {
 
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
-import Products from './pages/Products/Products';
+import AllProducts from './pages/AllProducts/AllProducts';
 import Registro from './pages/Registro/Registro';
+import Product from './pages/BuyProduct/BuyProduct';
 
 
 function RouterJsx() {
@@ -19,11 +20,9 @@ function RouterJsx() {
         <Route path='/' index element={<Home />} />
         <Route  path='/login' element={<Login />} />
         <Route  path='/register' element={<Registro />} />
+        <Route path='/produtos' element={<AllProducts />}/>
 
-
-        <Route path='/produtos' element={<Products />}/>
-
-        
+        <Route  path='/produtos/prod' element={<Product/>} />
       </Routes>
     </BrowserRouter>
   )
