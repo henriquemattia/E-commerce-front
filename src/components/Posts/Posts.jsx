@@ -30,6 +30,19 @@ const produtos = [
     name: "bermudas"
   }
 ]
+// const produtos = [
+//   { masculino: {
+//       image: camisa,
+//       valor: 344,
+//       name: "moletom"
+//   },
+//   feminino: {
+//     image: camisa,
+//     valor: 224,
+//     name: "calça"
+// }
+//   }
+// ]
 
 //colcoar tudo dentro de uma vide para tentar alinhar tudo confome vai almentando a tela
 //ver soibre RATIO opara as imagens respoeotarem um tanmanho

@@ -33,10 +33,10 @@ function Topbar() {
 
                 <Nav className="justify-content-end flex-grow-1 pe-3">
 
-                <Nav.Link href="/masculino">Masculino</Nav.Link>
-                  <Nav.Link href="feminino">Feminino</Nav.Link>
-                  <Nav.Link href="infantil">Infantil</Nav.Link>
-                  <Nav.Link href="esportes">Esportes</Nav.Link>
+                <Nav.Link href="/produto">Produtos</Nav.Link>
+                  <Nav.Link href="/feminino">Feminino</Nav.Link>
+                  <Nav.Link href="/infantil">Infantil</Nav.Link>
+                  <Nav.Link href="/esportes">Esportes</Nav.Link>
 
 
                 <NavDropdown title='Mais opcões'>
