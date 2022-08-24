@@ -12,3 +12,8 @@
 .cursor {
     cursor: pointer;
 }
+
+.botao{
+    text-decoration: none;
+    color: white;
+}

@@ -1,0 +1,11 @@
+.risco{
+    display: flex;
+    margin-top: 60px;
+    border: 0.5px solid rgb(51, 51, 51);
+    /* background-color: rgb(1, 51, 51); */
+}
+
+.destaque{
+    text-align: center;
+    margin: 30px;
+}

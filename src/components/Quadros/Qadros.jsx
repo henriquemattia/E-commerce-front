@@ -14,18 +14,22 @@ const quadros = [
   {
     titulo: "ESPORTES",
     image: Sporting,
+    link: '/login',
   },
   {
     titulo: "FEMINIO",
     image: Feminino,
+    link: '/produtos',
   },
   {
     titulo: "MASCULINO",
     image: Masculino,
+    link: '/produtos',
   },
   {
     titulo: "INFANTIL",
     image: Infantil,
+    link: '/produtos',
   },
 
 ]
@@ -41,11 +45,14 @@ function Quadros() {
               key={index}
               titulo={quad.titulo}
               image={quad.image}
+              link={quad.link}
             />
           )
         })}
       </Row>
-      <hr />
+
+      <span className="risco" ></span>
+      <h2 className="destaque">DESTAQUES</h2>
     </Container>
 
   );

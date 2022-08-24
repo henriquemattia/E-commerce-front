@@ -11,7 +11,7 @@ function Post(props) {
   <>
         <Col className='col-6'> 
             <Card className='pbt'>
-                <Card.Img variant="top"  src={props.image}/>
+                <Card.Img variant="top" src={props.image}/>
                     <Card.Body>
                         <Card.Text>
                         {props.name}

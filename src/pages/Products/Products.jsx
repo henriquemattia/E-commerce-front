@@ -8,6 +8,7 @@ import camisa from '../../images/products/camisetao-laranja.webp'
 import Produt from './Produt/Produt'
 
 import './styles.css'
+import Topbar from '../../components/NavBar/NavBar';
 
 // const produtos = [
 //   {
@@ -64,6 +65,10 @@ function Products() {
 
   return (
     <>
+      <Topbar />
+      <br />
+      <br />
+      <br />
       <Container>
         <Row>
           {produtos.map((prod) => {
