@@ -10,9 +10,12 @@ import Login from './pages/Login/Login';
 import AllProducts from './pages/AllProducts/AllProducts';
 import Registro from './pages/Registro/Registro';
 import Product from './pages/BuyProduct/BuyProduct';
+import { propTypes } from 'react-bootstrap/esm/Image';
 
 
-function RouterJsx() {
+
+
+function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
@@ -22,10 +25,11 @@ function RouterJsx() {
         <Route  path='/register' element={<Registro />} />
         <Route path='/produtos' element={<AllProducts />}/>
 
-        <Route  path='/produtos/prod' element={<Product/>} />
+        <Route  path='/produtos/camisa2' element={<Product/>} />
+        <Route  path='/produtos/camisa1' element={<Product/>} />
       </Routes>
     </BrowserRouter>
   )
 }
 
-export default RouterJsx
+export default AppRouter

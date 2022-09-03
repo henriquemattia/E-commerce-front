@@ -26,7 +26,7 @@ function Product() {
     </Container>
 
     <Container>
-      <h2 className='name'>CAMISA AZUL</h2>
+      <h2 className='name'>Camisa1</h2>
       <span className='tamanho desc_price'>R$ 369</span> 
       <span className='tamanho price ' > R$ 184,50</span>
       <p>Ultimas unidades desse modelo aproveite</p>

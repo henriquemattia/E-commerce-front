@@ -7,10 +7,11 @@ import Container from 'react-bootstrap/esm/Container';
 import camisa from '../../images/products/camisetao-laranja.webp'
 import Molde from './Molde/Molde'
 
-import './styles.css'
 import Topbar from '../../components/NavBar/NavBar';
 import { Link } from 'react-router-dom';
 
+import './styles.css'
+import Button from 'react-bootstrap/esm/Button';
 // const produtos = [
 //   {
 //     image: camisa,
@@ -70,8 +71,8 @@ function AllProducts() {
       <br />
       <br />
       <br />
-      <Container>
-        <Link className='tag-a' to='/produtos/prod'>
+        <Container>
+        
         <Row>
           {produtos.map((prod) => {
             return (
@@ -80,22 +81,23 @@ function AllProducts() {
               image={camisa}
               valor={prod.masculino.valor}
               name={prod.masculino.name}
-              />
-            )  
-          })}
-          {produtos.map((prod) => {
-            return (
-              <Molde 
-              key={prod.feminino}
-              image={camisa}
-              valor={prod.feminino.valor}
-              name={prod.feminino.name}
+              route={<Link className='tag-a'to={prod.masculino.rota}>COMPRAR</Link>}
               />
             )  
           })}
           
-        </Row>
-        </Link>
+        {produtos.map((prod) => {
+            return (
+              <Molde 
+              key={prod.feminino}
+              image={camisa}
+              name={prod.feminino.name}
+              valor={prod.feminino.valor}
+              route={<Link className='tag-a'to={prod.feminino.rota}>COMPRAR</Link>}
+              />
+            )  
+          })}
+          </Row>
       </Container>
 
     </>

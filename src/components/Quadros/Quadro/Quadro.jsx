@@ -12,7 +12,7 @@ function Quadro(props) {
         <Card.Img src={props.image} alt="Card image" className='rounded-0'/>
         <Card.ImgOverlay className='center'>
           <h2 className='font'>{props.titulo}</h2>
-          <Link to={props.link} className='botao cursor'><Button className="rounded-0 " variant="outline-light" >CONHECER</Button></Link>
+          <Link to={props.link} className='tag-a cursor'><Button className="rounded-0" variant="outline-light" >CONHECER</Button></Link>
         </Card.ImgOverlay>
       </Card>
     </Col>

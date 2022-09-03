@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-import RouterJsx from './appRouter';
+import AppRouter from './appRouter';
 
 
 import './index.css'
@@ -9,9 +9,9 @@ import './index.css'
 function App() {
   return (
     <>
-    <RouterJsx>
+    <AppRouter>
 
-    </RouterJsx>
+    </AppRouter>
     </>
   )
 }

@@ -6,14 +6,10 @@
 }
 
 .font {
-    font-size: 2.5rem;
+    font-size: 2.9rem;
 }
 
 .cursor {
     cursor: pointer;
 }
 
-.botao{
-    text-decoration: none;
-    color: white;
-}
