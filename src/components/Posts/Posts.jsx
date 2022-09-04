@@ -53,7 +53,7 @@ function Posts() {
   return (
     <>
       <Container>
-        <Link to='/produtos/prod' className='tag-a'>
+        <Link to='/produtos/camisa1' className='tag-a'>
         <Row>
           {produtos.map((prod, index) => {
             return (

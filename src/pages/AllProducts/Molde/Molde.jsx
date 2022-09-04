@@ -4,7 +4,6 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/esm/Button';
 import Col from 'react-bootstrap/esm/Col';
 
-import { Link } from 'react-router-dom';
 
 import './styles.css'
 
@@ -12,8 +11,6 @@ import './styles.css'
 function Molde(props) {
   return (
   <>
-
-
         <Col className='col-6'> 
             <Card className='pbt'>
            
@@ -25,7 +22,7 @@ function Molde(props) {
                         <Card.Text>
                         {props.valor}
                         </Card.Text>
-                        <Button>{props.route}</Button>
+                        <Button className="rounded-0" variant="outline-dark"  >{props.route}</Button>
                 </Card.Body>
             </Card>
          </Col>
