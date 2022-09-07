@@ -2,4 +2,5 @@
 
 ##
 
-## Front-end projeto pricipal TERA
+## Front-end do projeto pricipal TERA
+# Ainda em desenvolvimento 
