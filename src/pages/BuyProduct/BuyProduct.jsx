@@ -44,7 +44,7 @@ function Product() {
 
 
   return (
-    <>
+    <div className='all'>
       <Topbar />
       <Container>
         <Image src={camiseta} alt="homerm" className='imagem1' />
@@ -58,22 +58,33 @@ function Product() {
 
       <Container>
         <h2 className='name'>{prodMascu.name || prodfemi.name}</h2>
-        <span className='tamanho desc_price'>{prodMascu.valorDesc || prodfemi.valorDesc}</span>
-        <span className='tamanho price ' >{prodMascu.valor || prodfemi.valor}</span>
-        <p>Ultimas unidades desse modelo aproveite</p>
+        <div className='divisor cinza'></div>
+        <div className='prices'>
+          <span className='tamanho desc_price text-cinza'>{prodMascu.valorDesc || prodfemi.valorDesc}</span>
+          <span className='tamanho price' >{prodMascu.valor || prodfemi.valor}</span>
+        </div>
+        
+        <p className='text-cinza description'>Ultimas únidades desse modelo aproveite!</p>
       </Container>
-      <Container>
-        <span><button> - 1 + </button> <button>COMPRAR</button></span>
-      </Container>
+      <div>
+        <div className='buy-area'> <div className='mais-e-menos'><button className='branco text-cinza'>-</button><span>1</span><button className='branco text-cinza'>+</button> </div><button className='buy-btn'>COMPRAR</button></div>
+      </div>
       <br />
       <Container>
-        <p>CALCULE O VALOR DO FRETE</p>
-        <span><button>00000-000</button> <button>CALCULAR</button></span>
+        <strong>CALCULE O VALOR DO FRETE</strong>
       </Container>
-      <br />
+      <div>
+        <div className='cep-area'> <div className='cep-value text-cinza'><span>00000-00</span></div><button className='calc-btn'>CALCULAR</button></div>
+      </div>
+      <Container>
+        <p className='sub-description text-cinza'>SKU: 2938472874-AZUL</p>
+        <p className='sub-description text-cinza'>Categoria: Roupas</p>
+        <p className='sub-description text-cinza'>TAG: Lançamentos</p>
+        
+      </Container>
       <Footer />
 
-    </>
+    </div>
   )
 }
 export default Product;
