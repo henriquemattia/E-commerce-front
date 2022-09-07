@@ -74,7 +74,7 @@ function Product() {
         <strong>CALCULE O VALOR DO FRETE</strong>
       </Container>
       <div>
-        <div className='cep-area'> <div className='cep-value text-cinza'><span>00000-00</span></div><button className='calc-btn'>CALCULAR</button></div>
+        <div className='cep-area'> <div className='cep-value text-cinza'><span>00000-000</span></div><button className='calc-btn'>CALCULAR</button></div>
       </div>
       <Container>
         <p className='sub-description text-cinza'>SKU: 2938472874-AZUL</p>
@@ -82,6 +82,7 @@ function Product() {
         <p className='sub-description text-cinza'>TAG: Lançamentos</p>
         
       </Container>
+      <br />
       <Footer />
 
     </div>

@@ -5,6 +5,8 @@ import Button from 'react-bootstrap/esm/Button';
 import Col from 'react-bootstrap/esm/Col';
 
 
+
+
 import './styles.css'
 
 
@@ -12,16 +14,16 @@ function Molde(props) {
   return (
   <>
         <Col className='col-6'> 
-            <Card className='pbt'>
+            <Card className='pbt '>
            
                 <Card.Img variant="top"  src={props.image}/>
                     <Card.Body>
-                        <Card.Text>
+                        <div className='post-name'>
                         {props.name}
-                        </Card.Text>
-                        <Card.Text>
+                        </div>
+                        <div className='post-price'>
                         {props.valor}
-                        </Card.Text>
+                        </div>
                         <Button className="rounded-0" variant="outline-dark"  >{props.route}</Button>
                 </Card.Body>
             </Card>
