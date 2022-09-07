@@ -12,19 +12,19 @@ import Masculino from '../../images/quadros/homen.jpeg'
 
 const quadros = [
   {
-    titulo: "ESPORTES",
-    image: Sporting,
-    link: '/login',
+    titulo: "MASCULINO",
+    image: Masculino,
+    link: '/masculino',
   },
   {
     titulo: "FEMINIO",
     image: Feminino,
-    link: '/produtos',
+    link: '/feminino',
   },
   {
-    titulo: "MASCULINO",
-    image: Masculino,
-    link: '/produtos',
+    titulo: "ESPORTES",
+    image: Sporting,
+    link: '/login',
   },
   {
     titulo: "INFANTIL",

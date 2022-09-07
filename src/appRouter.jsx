@@ -8,9 +8,15 @@ import {
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
 import Registro from './pages/Registro/Registro';
-import Product from './pages/BuyProduct/BuyProduct';
 
+// Parte dos produtos
 import AllProducts from './pages/AllProducts/AllProducts';
+import Product from './pages/BuyProduct/BuyProduct';
+//produtos individuais
+import Masculino from './pages/Sessions/Masculino/Masculino';
+import Feminino from './pages/Sessions/Feminino/Feminino';
+import Infaltil from './pages/Sessions/Infaltil/Infantil';
+import Esportes from './pages/Sessions/Esportes/Esportes';
 
 
 
@@ -22,6 +28,14 @@ function AppRouter() {
         <Route path='/' index element={<Home />} />
         <Route  path='/login' element={<Login />} />
         <Route  path='/register' element={<Registro />} />
+         
+             {/* PRODUTOS */}
+        <Route path='/masculino' element={<Masculino />}/>
+        <Route path='/feminino' element={<Feminino/>}/>
+        <Route path='/esportes' element={<Infaltil />}/>
+        <Route path='/infantil' element={<Esportes />}/>
+
+
         <Route path='/produtos' element={<AllProducts />}/>
         
 

@@ -15,17 +15,27 @@ import './styles.css'
 //ver soibre RATIO opara as imagens respoeotarem um tanmanho
 
 
-function AllProducts() {
+ function AllProducts() {
 
   const [ produtos, setProdutos ] = useState([])
+  // const [ prodM, setProdM] = useState([])
+  // const [ prodF, setProdF] = useState([])
 
-  useEffect(()=>{
-    fetch('http://127.0.0.1:5000/produtos')
+  
+
+
+
+   useEffect (()=>{
+    async function fetchData(){
+    await fetch('http://127.0.0.1:5000/produtos')
       .then(res => res.json())
-      .then(data => setProdutos(data))
-      }, []) //deixando vazio o componente será atualizado somente uma vez "quando a pagina for carregada", entao nao importa qunatas vezs nossa variavel for alterada ele nao vai usar o useEffect! 
+      .then(data => setProdutos(data))}
+      fetchData()
+      }, [])//deixando vazio o componente será atualizado somente uma vez "quando a pagina for carregada", entao nao importa qunatas vezs nossa variavel for alterada ele nao vai usar o useEffect! 
 
-  return (
+      //       },[produtos])
+  
+    return(
     <>
       <Topbar />
       <br />
@@ -33,13 +43,13 @@ function AllProducts() {
       <br />
         <Container>
         <Row>
-          {produtos.map((prod) => {
+        {produtos.map((prod) => {
             return (
               <Molde 
               key={prod.masculino}
               image={camisa}
-              valor={prod.masculino.valor}
               name={prod.masculino.name}
+              valor={prod.masculino.valor}
               route={<Link className='tag-a'to={`/produtos/${prod.masculino.rota}`}>COMPRAR</Link>}
               />
             )  
