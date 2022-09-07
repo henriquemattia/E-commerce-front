@@ -17,6 +17,8 @@ import Masculino from './pages/Sessions/Masculino/Masculino';
 import Feminino from './pages/Sessions/Feminino/Feminino';
 import Infaltil from './pages/Sessions/Infaltil/Infantil';
 import Esportes from './pages/Sessions/Esportes/Esportes';
+// sub pages
+import BuyMascu from './pages/Sessions/Masculino/BuyMascu';
 
 
 
@@ -41,6 +43,7 @@ function AppRouter() {
 
 
         <Route  path='/produtos/:id' element={<Product/>} />
+        <Route  path='/masculino/:id' element={<BuyMascu />} />
       </Routes>
     </BrowserRouter>
   )

@@ -49,7 +49,7 @@ import { Link } from 'react-router-dom';
               image={camisa}
               name={prod.name}
               valor={prod.valor}
-              route={<Link className='tag-a'to={`/produtos/${prod.rota}`}>COMPRAR</Link>}
+              route={<Link className='tag-a'to={`/masculino/${prod.rota}`}>COMPRAR</Link>}
               />
             )  
           })}
