@@ -32,7 +32,7 @@ import './styles.css'
       .then(data => setProdutos(data))}
       fetchData()
       }, [])//deixando vazio o componente será atualizado somente uma vez "quando a pagina for carregada", entao nao importa qunatas vezs nossa variavel for alterada ele nao vai usar o useEffect! 
-
+        console.log(produtos);
       //       },[produtos])
   
     return(

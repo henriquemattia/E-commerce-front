@@ -21,15 +21,12 @@ function Registro() {
 
         if (data.password === data.confirmPassword) {
 
-
-
             const body = {
                 username: data.username,
                 email: data.email,
                 password: data.password,
                 confirmPassword: data.confirmPassword
             }
-
             const reqOptions =
             {
                 method: "POST",
@@ -39,10 +36,11 @@ function Registro() {
                 },
                 body: JSON.stringify(body)
             }
+             
             fetch('http://localhost:5000/users', reqOptions)
-            .then(res => res.json())
-            .then(data=>console.log(data))
-            .catch(err=>console.log(err))
+                .then(res => res.json())
+                .then(data => console.log(data))
+                .catch(err => console.log(err))
 
             console.log(data)
             reset()

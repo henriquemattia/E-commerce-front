@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
+import axios from 'axios'
 
 import Row from 'react-bootstrap/esm/Row';
 import Container from 'react-bootstrap/esm/Container';
@@ -9,59 +11,43 @@ import Post from './Post/Post'
 import './styles.css'
 import { Link } from 'react-router-dom';
 
-const produtos = [
-  {
-    image: camisa,
-    valor: 344,
-    name: "moletom"
-  },
-  {
-    image: camisa,
-    valor: 777,
-    name: "calça"
-  },
-  {
-    image: camisa,
-    valor: 25.99,
-    name: "camiseta"
-  },
-  {
-    image: camisa,
-    valor: "35,99 R$",
-    name: "bermudas"
-  }
-]
-// const produtos = [
-//   { masculino: {
-//       image: camisa,
-//       valor: 344,
-//       name: "moletom"
-//   },
-//   feminino: {
-//     image: camisa,
-//     valor: 224,
-//     name: "calça"
-// }
-//   }
-// ]
-
-//colcoar tudo dentro de uma vide para tentar alinhar tudo confome vai almentando a tela
-//ver soibre RATIO opara as imagens respoeotarem um tanmanho
-
 
 function Posts() {
+
+  const [dest, setDest] = useState([])
+
+  const getProduts = async () => {
+    try {
+      const url = 'http://127.0.0.1:5000/destaque'
+      const res = await axios.get(url)
+       setDest(res.data.dados);
+      //  console.log(res.data.dados);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+
+    useEffect(()=>{
+      getProduts()
+      console.log('componetne construido'); 
+      return ()=>{
+        console.log('destruido');
+    }
+    },[])
+    //ver soibre RATIO opara as imagens respoeotarem um tanmanho
   return (
     <>
       <Container>
         <Link to='/produtos/camisa1' className='tag-a'>
         <Row>
-          {produtos.map((prod, index) => {
+          {dest.map((prod, index) => {
             return (
               <Post 
               key={index}
-              image={prod.image}
-              valor={prod.valor}
-              name={prod.name}
+              name={prod.nome}
+              valor={prod.price}
+              image={camisa}
               />
             )  
           })}

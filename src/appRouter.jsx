@@ -32,7 +32,7 @@ function AppRouter() {
         <Route  path='/register' element={<Registro />} />
          
              {/* PRODUTOS */}
-        <Route path='/masculino' element={<Masculino />}/>
+        {/* <Route path='/masculino' element={<Masculino />}/>
         <Route path='/feminino' element={<Feminino/>}/>
         <Route path='/esportes' element={<Infaltil />}/>
         <Route path='/infantil' element={<Esportes />}/>
@@ -43,7 +43,7 @@ function AppRouter() {
 
 
         <Route  path='/produtos/:id' element={<Product/>} />
-        <Route  path='/masculino/:id' element={<BuyMascu />} />
+        <Route  path='/masculino/:id' element={<BuyMascu />} /> */}
       </Routes>
     </BrowserRouter>
   )
