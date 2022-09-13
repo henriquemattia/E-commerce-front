@@ -9,15 +9,21 @@
     border-radius: 0px !important;
 }
 
-.pbt {
-    margin-bottom: 8px;
-}
 .post-name{
-    display: block;
-    height: 3rem;
-    margin-bottom: 6%;
+    /* margin: 0!important; */
+    height: 1.5rem;
+    margin-top: 8%;
+    /* border: 1px solid green; */
 }
 
 .post-price{
-    margin-bottom: 10%;
+    /* border: 1px solid blue; */
+
+}
+
+.ajj{
+    /* border: 1px solid red; */
+    padding: 0!important;
+    display: block;
+
 }

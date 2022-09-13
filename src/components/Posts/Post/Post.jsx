@@ -13,12 +13,12 @@ function Post(props) {
             <Card className='pbt '>
            
                 <Card.Img className="imgg"variant="top"  src={props.image}/>
-                    <Card.Body>
+                    <Card.Body className="ajj">
                         <div className='post-name'>
                         {props.name}
                         </div>
                         <div className='post-price'>
-                        {props.valor}
+                        <p>R$: {props.valor}</p>
                         </div>
                 </Card.Body>
             </Card>
