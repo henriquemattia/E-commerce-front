@@ -4,6 +4,7 @@ import Topbar from '../../components/NavBar/NavBar';
 import Image from 'react-bootstrap/Image'
 
 import './styles.css'
+import axios from 'axios';
 
 import camiseta from '../../images/products/camisetao-laranja.webp'
 import Row from 'react-bootstrap/esm/Row';
@@ -14,35 +15,45 @@ import { useParams } from 'react-router-dom';
 
 function Product() {
 
-  const [produtos, setProdutos] = useState([])
-  const [prodMascu, setProdMascu] = useState([])
-  const [prodfemi, setProdfemi] = useState([])
+  const [dest, setDest] = useState([])
+  const [prod, setProd] = useState([])
+
+  const getProduts = async () => {
+    try {
+      const url = 'http://127.0.0.1:5000/destaque'
+      const res = await axios.get(url)
+      setDest(res.data.dados);
+      //  console.log(res.data.dados);
+      //  console.log(res.data.dados);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
 
   useEffect(() => {
-    fetch('http://127.0.0.1:5000/produtos')
-      .then(res => res.json())
-      .then(data => setProdutos(data))
+    getProduts()
+    console.log('componetne construido');
+    return () => {
+      console.log('destruido');
+    }
   }, [])
 
   const parms = useParams()
 
-  produtos.find((p) => p.rota === parms.id)
+
+  dest.find((p) => p.rota === parms.id)
+
   useEffect(() => {
-    produtos.map((nam) => {
-      if (nam.masculino.rota == parms.id) {
-        setProdMascu(nam.masculino)
-      }
-      else if (nam.feminino.rota == parms.id) {
-        setProdfemi(nam.feminino)
-      }
-      else return console.log('erro aqui')
+    dest.map((nam) => {
+      if (nam.rota == parms.id) {
+        setProd(nam)
+      } 
     }
     )
-  }, [produtos])
-  // console.log(prodMascu, "masculino");
-  // console.log(prodfemi, "feminino");
-
-
+  }, [dest])
+  // console.log(prod)
+  
   return (
     <div className='all'>
       <Topbar />
@@ -57,13 +68,13 @@ function Product() {
       </Container>
 
       <Container>
-        <h2 className='name'>{prodMascu.name || prodfemi.name}</h2>
+        <h2 className='name'>{prod.nome}</h2>
         <div className='divisor cinza'></div>
         <div className='prices'>
-          <span className='tamanho desc_price text-cinza'>{prodMascu.valorDesc || prodfemi.valorDesc}</span>
-          <span className='tamanho price' >{prodMascu.valor || prodfemi.valor}</span>
+          <span className='tamanho desc_price text-cinza'>{prod.desc_price}</span>
+          <span className='tamanho price' >{prod.price}</span>
         </div>
-        
+
         <p className='text-cinza description'>Ultimas únidades desse modelo aproveite!</p>
       </Container>
       <div>
@@ -80,7 +91,7 @@ function Product() {
         <p className='sub-description text-cinza'>SKU: 2938472874-AZUL</p>
         <p className='sub-description text-cinza'>Categoria: Roupas</p>
         <p className='sub-description text-cinza'>TAG: Lançamentos</p>
-        
+
       </Container>
       <br />
       <Footer />

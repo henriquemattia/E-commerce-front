@@ -5,6 +5,7 @@ import {
   Route,
 } from "react-router-dom";
 
+
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
 import Registro from './pages/Registro/Registro';
@@ -32,7 +33,7 @@ function AppRouter() {
         <Route  path='/register' element={<Registro />} />
          
              {/* PRODUTOS */}
-        {/* <Route path='/masculino' element={<Masculino />}/>
+        <Route path='/masculino' element={<Masculino />}/>
         <Route path='/feminino' element={<Feminino/>}/>
         <Route path='/esportes' element={<Infaltil />}/>
         <Route path='/infantil' element={<Esportes />}/>
@@ -42,8 +43,9 @@ function AppRouter() {
         
 
 
-        <Route  path='/produtos/:id' element={<Product/>} />
-        <Route  path='/masculino/:id' element={<BuyMascu />} /> */}
+        {/* <Route  path='/produtos/:id' element={<Product/>} /> */}
+        <Route  path='/:cate/:id' element={<Product/>} />
+        {/* <Route  path='/masculino/:id' element={<BuyMascu />} /> */}
       </Routes>
     </BrowserRouter>
   )

@@ -21,6 +21,7 @@ function Posts() {
       const url = 'http://127.0.0.1:5000/destaque'
       const res = await axios.get(url)
        setDest(res.data.dados);
+       console.log(res.data.dados);
       //  console.log(res.data.dados);
     } catch (err) {
       console.log(err);
@@ -39,20 +40,20 @@ function Posts() {
   return (
     <>
       <Container>
-        <Link to='/produtos/camisa1' className='tag-a'>
         <Row>
           {dest.map((prod, index) => {
             return (
               <Post 
               key={index}
+              categoria={prod.categoria}
               name={prod.nome}
               valor={prod.price}
               image={camisa}
+              rota={prod.rota}
               />
             )  
           })}
         </Row>
-        </Link>
       </Container>
 
     </>

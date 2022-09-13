@@ -3,10 +3,11 @@ import Row from 'react-bootstrap/esm/Row';
 import Container from 'react-bootstrap/esm/Container';
 
 import camisa from '../../../images/products/camisetao-laranja.webp'
-import Molde from '../../AllProducts/Molde/Molde'
+// import Molde from '../../AllProducts/Molde/Molde'
 
 import Topbar from '../../../components/NavBar/NavBar';
 import { Link } from 'react-router-dom';
+import Post from '../../../components/Posts/Post/Post';
 
 // import './styles.css'
 
@@ -44,7 +45,7 @@ import { Link } from 'react-router-dom';
         <Row>
         {masculino.map((prod, index) => {
             return (
-              <Molde 
+              <Post 
               key={index}
               image={camisa}
               name={prod.name}

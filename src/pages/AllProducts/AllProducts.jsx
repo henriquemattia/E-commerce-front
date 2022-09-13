@@ -2,13 +2,16 @@ import React, { useState, useEffect } from 'react';
 import Row from 'react-bootstrap/esm/Row';
 import Container from 'react-bootstrap/esm/Container';
 
+import axios from 'axios';
+
 import camisa from '../../images/products/camisetao-laranja.webp'
-import Molde from './Molde/Molde'
+// import Molde from './Molde/Molde'
 
 import Topbar from '../../components/NavBar/NavBar';
 import { Link } from 'react-router-dom';
 
 import './styles.css'
+import Post from '../../components/Posts/Post/Post';
 
 
 //colcoar tudo dentro de uma vide para tentar alinhar tudo confome vai almentando a tela
@@ -17,24 +20,28 @@ import './styles.css'
 
  function AllProducts() {
 
-  const [ produtos, setProdutos ] = useState([])
-  // const [ prodM, setProdM] = useState([])
-  // const [ prodF, setProdF] = useState([])
+  const [dest, setDest] = useState([])
 
-  
+  const getProduts = async () => {
+    try {
+      const url = 'http://127.0.0.1:5000/produtos'
+      const res = await axios.get(url)
+       setDest(res.data.dados);
+       console.log(res.data.dados);
+      //  console.log(res.data.dados);
+    } catch (err) {
+      console.log(err);
+    }
+  }
 
 
-
-   useEffect (()=>{
-    async function fetchData(){
-    await fetch('http://127.0.0.1:5000/produtos')
-      .then(res => res.json())
-      .then(data => setProdutos(data))}
-      fetchData()
-      }, [])//deixando vazio o componente será atualizado somente uma vez "quando a pagina for carregada", entao nao importa qunatas vezs nossa variavel for alterada ele nao vai usar o useEffect! 
-        console.log(produtos);
-      //       },[produtos])
-  
+    useEffect(()=>{
+      getProduts()
+      console.log('componetne construido'); 
+      return ()=>{
+        console.log('destruido');
+    }
+    },[])
     return(
     <>
       <Topbar />
@@ -43,26 +50,14 @@ import './styles.css'
       <br />
         <Container>
         <Row>
-        {produtos.map((prod) => {
+        {dest.map((prod, index) => {
             return (
-              <Molde 
-              key={prod.masculino}
+              <Post 
+              key={index}
               image={camisa}
-              name={prod.masculino.name}
-              valor={prod.masculino.valor}
-              route={<Link className='tag-a'to={`/produtos/${prod.masculino.rota}`}>COMPRAR</Link>}
-              />
-            )  
-          })}
-          
-        {produtos.map((prod) => {
-            return (
-              <Molde 
-              key={prod.feminino}
-              image={camisa}
-              name={prod.feminino.name}
-              valor={prod.feminino.valor}
-              route={<Link className='tag-a'to={`/produtos/${prod.feminino.rota}`}>COMPRAR</Link>}
+              name={prod.nome}
+              valor={prod.price}
+              route={<Link className='tag-a'to={`/${prod.categoria}/${prod.rota}`}></Link>}
               />
             )  
           })}
