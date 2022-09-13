@@ -10,15 +10,16 @@ function Post(props) {
   return (
   <>
         <Col className='col-6'> 
-            <Card className='pbt'>
-                <Card.Img variant="top" src={props.image}/>
+            <Card className='pbt '>
+           
+                <Card.Img className="imgg"variant="top"  src={props.image}/>
                     <Card.Body>
-                        <Card.Text>
+                        <div className='post-name'>
                         {props.name}
-                        </Card.Text>
-                        <Card.Text>
+                        </div>
+                        <div className='post-price'>
                         {props.valor}
-                        </Card.Text>
+                        </div>
                 </Card.Body>
             </Card>
          </Col>

@@ -1,3 +1,23 @@
 .pbt {
     margin-bottom: 8px;
+    border-radius: 0px!important;
+    border: transparent !important;
+    /* border: solid rgba(162, 162, 162, 0.458) 1px !important; */
+}
+
+.imgg{
+    border-radius: 0px !important;
+}
+
+.pbt {
+    margin-bottom: 8px;
+}
+.post-name{
+    display: block;
+    height: 3rem;
+    margin-bottom: 6%;
+}
+
+.post-price{
+    margin-bottom: 10%;
 }
