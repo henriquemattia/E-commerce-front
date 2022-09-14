@@ -11,7 +11,7 @@ function Post(props) {
     return (
         <>
             <Col className='col-6'>
-                <Link to={`/${props.categoria}/${props.rota}`}>
+                <Link to={`/${props.categoria}/${props.rota}`} className='tag-a'>
                     <Card className='pbt '>
 
                         <Card.Img className="imgg" variant="top" src={props.image} />
@@ -20,7 +20,8 @@ function Post(props) {
                                 {props.name}
                             </div>
                             <div className='post-price'>
-                                <p>R$: {props.valor}</p>
+                                <p>DE: R$: {props.desc_valor}</p>
+                                <p>POR: R$: {props.valor}</p>
                             </div>
                         </Card.Body>
                     </Card>

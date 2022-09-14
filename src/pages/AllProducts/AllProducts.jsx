@@ -10,8 +10,8 @@ import camisa from '../../images/products/camisetao-laranja.webp'
 import Topbar from '../../components/NavBar/NavBar';
 import { Link } from 'react-router-dom';
 
-import './styles.css'
 import Post from '../../components/Posts/Post/Post';
+import './styles.css'
 
 
 //colcoar tudo dentro de uma vide para tentar alinhar tudo confome vai almentando a tela
@@ -56,7 +56,8 @@ import Post from '../../components/Posts/Post/Post';
               key={index}
               image={camisa}
               name={prod.nome}
-              valor={prod.price}
+              valor={prod.preco}
+              desc_valor={prod.desc_preco}
               route={<Link className='tag-a'to={`/${prod.categoria}/${prod.rota}`}></Link>}
               />
             )  

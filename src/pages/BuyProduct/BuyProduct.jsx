@@ -20,9 +20,10 @@ function Product() {
 
   const getProduts = async () => {
     try {
-      const url = 'http://127.0.0.1:5000/destaque'
+      const url = 'http://127.0.0.1:5000/produtos'
       const res = await axios.get(url)
       setDest(res.data.dados);
+      console.log(res.data.dados);
       //  console.log(res.data.dados);
       //  console.log(res.data.dados);
     } catch (err) {
@@ -40,19 +41,26 @@ function Product() {
   }, [])
 
   const parms = useParams()
+  // console.log(parms);
+  // console.log(parms.id);
 
 
   dest.find((p) => p.rota === parms.id)
+  // console.log(parms.id);
+  // console.log(parms.rota);
 
   useEffect(() => {
     dest.map((nam) => {
       if (nam.rota == parms.id) {
+        console.log(nam)
+
         setProd(nam)
       } 
     }
     )
   }, [dest])
   // console.log(prod)
+  // console.log(dest)
   
   return (
     <div className='all'>
@@ -71,8 +79,8 @@ function Product() {
         <h2 className='name'>{prod.nome}</h2>
         <div className='divisor cinza'></div>
         <div className='prices'>
-          <span className='tamanho desc_price text-cinza'>{prod.desc_price}</span>
-          <span className='tamanho price' >{prod.price}</span>
+          <span className='tamanho desc_price text-cinza'>R$ {prod.desc_preco}</span>
+          <span className='tamanho price' >R$ {prod.preco}</span>
         </div>
 
         <p className='text-cinza description'>Ultimas únidades desse modelo aproveite!</p>
@@ -89,7 +97,7 @@ function Product() {
       </div>
       <Container>
         <p className='sub-description text-cinza'>SKU: 2938472874-AZUL</p>
-        <p className='sub-description text-cinza'>Categoria: Roupas</p>
+        <p className='sub-description text-cinza'>Categoria: {prod.categoria}</p>
         <p className='sub-description text-cinza'>TAG: Lançamentos</p>
 
       </Container>

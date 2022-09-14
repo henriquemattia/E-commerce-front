@@ -44,7 +44,7 @@ function AppRouter() {
 
 
         {/* <Route  path='/produtos/:id' element={<Product/>} /> */}
-        <Route  path='/:cate/:id' element={<Product/>} />
+        <Route  path='/:categoria/:id' element={<Product/>} />
         {/* <Route  path='/masculino/:id' element={<BuyMascu />} /> */}
       </Routes>
     </BrowserRouter>

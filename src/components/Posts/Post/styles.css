@@ -1,5 +1,11 @@
+.tag-a{
+    text-decoration: none;
+    color: inherit;
+}
+
+
 .pbt {
-    margin-bottom: 8px;
+    margin-bottom: 10%;
     border-radius: 0px!important;
     border: transparent !important;
     /* border: solid rgba(162, 162, 162, 0.458) 1px !important; */
@@ -9,18 +15,29 @@
     border-radius: 0px !important;
 }
 
+.ajj{
+    padding: 0!important;
+    height: 5.7rem;
+    display: block;
+    border: 1px solid red;
+}
+
 .post-name{
-    /* margin: 0!important; */
-    height: 1.5rem;
-    margin-top: 8%;
+    height: auto;
+    display: flex;
+    margin-top: 3%;
+    font-size: .9rem;
     /* border: 1px solid green; */
 }
 
-/* .post-price */
 
-.ajj{
-    /* border: 1px solid red; */
-    padding: 0!important;
-    display: block;
+.post-price{
+    margin-top: 4%;
+    height: 2.5rem;
+    font-size: .8rem;
+    /* border: 1px solid blue; */
+}
 
+p{
+    margin: 0!important;
 }
