@@ -1,13 +1,27 @@
-/* .bac{
-    background-color: black;
-    color: aliceblue;
-} */
-
-.mj{
-    max-width: 70vh;
+.blac{
+    background-color: rgb(24, 24, 24);
+    color: rgb(236, 236, 236);
 }
 
 .transp{
     background-color: rgba(254, 254, 254, 0.941);
     display: block;
+    height: 7.5vh;
+}
+
+.navbar-toggler{
+    border: transparent!important;
+}
+
+.offcanvas{
+    max-width: 70%!important;
+}
+
+.dropdown-menu.show{
+    background-color: rgb(35, 35, 35);
+    color: rgb(236, 236, 236);
+}
+a.dropdown-item{
+    background-color: rgb(35, 35, 35);
+    color: rgb(216, 216, 216);
 }

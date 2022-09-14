@@ -19,7 +19,7 @@ function Topbar() {
           <Container fluid >
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Brand href='/'>HFM</Navbar.Brand>
-            <Navbar.Brand href='/carrinho'><BsHandbag /></Navbar.Brand>
+            <Navbar.Brand href='/carrinho'> <BsHandbag /> </Navbar.Brand>
             
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
@@ -28,15 +28,15 @@ function Topbar() {
               className="mj"
             >
               
-              <Offcanvas.Header className="bac" closeButton>
+              <Offcanvas.Header className="blac" closeButton>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
                   HFM
                 </Offcanvas.Title>
               </Offcanvas.Header>
-              <Offcanvas.Body className="bac mj">
+              <Offcanvas.Body className="blac mj">
              
 
-                <Nav className="justify-content-end flex-grow-1 pe-3 bac">
+                <Nav className="justify-content-end flex-grow-1 pe-3 blac">
 
                 <Nav.Link href="/produtos">TODOS OS PRODUTOS</Nav.Link>
                   <Nav.Link href="/feminino">Feminino</Nav.Link>
@@ -45,7 +45,7 @@ function Topbar() {
                   <Nav.Link href="/esportes">Calçados</Nav.Link>
 
 
-                <NavDropdown title='Mais opcões'>
+                <NavDropdown  title='Mais opcões'>
                   <NavDropdown.Item eventKey="4.1" >Login</NavDropdown.Item>
                   <NavDropdown.Item eventKey="4.2">Another action</NavDropdown.Item>
                   <NavDropdown.Item eventKey="4.3">Something else here</NavDropdown.Item>
