@@ -1,0 +1,13 @@
+/* .bac{
+    background-color: black;
+    color: aliceblue;
+} */
+
+.mj{
+    max-width: 70vh;
+}
+
+.transp{
+    background-color: rgba(254, 254, 254, 0.941);
+    display: block;
+}

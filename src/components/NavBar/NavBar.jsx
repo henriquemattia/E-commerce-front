@@ -6,6 +6,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
+import './styles.css'
+
 
 import { BsHandbag } from "react-icons/bs";
 
@@ -13,30 +15,34 @@ function Topbar() {
   return (
     <>
       {['md'].map((expand) => (
-        <Navbar  key={expand} bg="light" expand={expand} className='fixed-top'>
-          <Container fluid>
+        <Navbar  key={expand}  expand={expand} className='fixed-top transp'>
+          <Container fluid >
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Brand href='/'>HFM</Navbar.Brand>
-            <BsHandbag></BsHandbag>
+            <Navbar.Brand href='/carrinho'><BsHandbag /></Navbar.Brand>
+            
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
               placement="start"
+              className="mj"
             >
-              <Offcanvas.Header closeButton>
+              
+              <Offcanvas.Header className="bac" closeButton>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
                   HFM
                 </Offcanvas.Title>
               </Offcanvas.Header>
-              <Offcanvas.Body>
+              <Offcanvas.Body className="bac mj">
              
 
-                <Nav className="justify-content-end flex-grow-1 pe-3">
+                <Nav className="justify-content-end flex-grow-1 pe-3 bac">
 
-                <Nav.Link href="/produtos">Todos os produtos</Nav.Link>
+                <Nav.Link href="/produtos">TODOS OS PRODUTOS</Nav.Link>
                   <Nav.Link href="/feminino">Feminino</Nav.Link>
-                  <Nav.Link href="/infantil">Infantil</Nav.Link>
-                  <Nav.Link href="/esportes">Esportes</Nav.Link>
+                  <Nav.Link href="/infantil">Masculino</Nav.Link>
+                  <Nav.Link href="/esportes">Acessórios</Nav.Link>
+                  <Nav.Link href="/esportes">Calçados</Nav.Link>
 
 
                 <NavDropdown title='Mais opcões'>
