@@ -49,7 +49,7 @@ function Posts() {
               name={prod.nome}
               valor={prod.preco}
               desc_valor={prod.desc_preco}
-              image={camisa}
+              image={prod.img_main}
               rota={prod.rota}
               />
             )  

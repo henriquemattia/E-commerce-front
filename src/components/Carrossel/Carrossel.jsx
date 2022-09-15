@@ -12,7 +12,7 @@ function Carrossel () {
     return (
         <Carousel className='mt'>
 
-          <Carousel.Item>
+          <Carousel.Item className='gg'>
             <img
               className="d-block w-100"
               src={mulher}
@@ -25,7 +25,7 @@ function Carrossel () {
           </Carousel.Item>
 
 
-          <Carousel.Item>
+          <Carousel.Item className='gg'>
             <img
               className="d-block w-100"
               src={homens}
@@ -38,7 +38,7 @@ function Carrossel () {
           </Carousel.Item>
 
 
-          <Carousel.Item>
+          <Carousel.Item className='gg'>
             <img
               className="d-block w-100"
               src={criancas}
