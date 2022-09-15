@@ -59,19 +59,19 @@ function Product() {
     }
     )
   }, [dest])
-  // console.log(prod)
+  console.log(prod)
   // console.log(dest)
   
   return (
     <div className='all'>
       <Topbar />
       <Container>
-        <Image src={camiseta} alt="homerm" className='imagem1' />
+        <Image src={prod.img_main} alt="homerm" className='imagem1' />
         <Row>
-          <Col><Image src={camiseta} alt="homerm" className='abaixo' /></Col>
-          <Col><Image src={camiseta} alt="homerm" className='abaixo' /></Col>
-          <Col><Image src={camiseta} alt="homerm" className='abaixo' /></Col>
-          <Col><Image src={camiseta} alt="homerm" className='abaixo' /></Col>
+          <Col><Image src={prod.img_front} alt="homerm" className='abaixo' /></Col>
+          <Col><Image src={prod.img_right} alt="homerm" className='abaixo' /></Col>
+          <Col><Image src={prod.img_left} alt="homerm" className='abaixo' /></Col>
+          <Col><Image src={prod.img_back} alt="homerm" className='abaixo' /></Col>
         </Row>
       </Container>
 
