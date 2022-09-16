@@ -13,13 +13,12 @@ import Registro from './pages/Registro/Registro';
 // Parte dos produtos
 import AllProducts from './pages/AllProducts/AllProducts';
 import Product from './pages/BuyProduct/BuyProduct';
+
 //produtos individuais
 import Masculino from './pages/Sessions/Masculino/Masculino';
 import Feminino from './pages/Sessions/Feminino/Feminino';
-import Infaltil from './pages/Sessions/Infaltil/Infantil';
-import Esportes from './pages/Sessions/Esportes/Esportes';
-// sub pages
-import BuyMascu from './pages/Sessions/Masculino/BuyMascu';
+import Calcados from './pages/Sessions/Calcados/Calcados';
+import Acessorios from './pages/Sessions/Acessorios/Acessorios';
 
 
 
@@ -34,18 +33,16 @@ function AppRouter() {
          
              {/* PRODUTOS */}
         <Route path='/masculino' element={<Masculino />}/>
-        <Route path='/feminino' element={<Feminino/>}/>
-        <Route path='/esportes' element={<Infaltil />}/>
-        <Route path='/infantil' element={<Esportes />}/>
+        <Route path='/feminino' element={<Feminino />}/>
+        <Route path='/acessorios' element={<Acessorios />}/>
+        <Route path='/calcados' element={<Calcados />}/>
 
 
         <Route path='/produtos' element={<AllProducts />}/>
         
 
 
-        {/* <Route  path='/produtos/:id' element={<Product/>} /> */}
         <Route  path='/:categoria/:id' element={<Product/>} />
-        {/* <Route  path='/masculino/:id' element={<BuyMascu />} /> */}
       </Routes>
     </BrowserRouter>
   )

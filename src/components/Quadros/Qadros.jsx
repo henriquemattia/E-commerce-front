@@ -17,19 +17,19 @@ const quadros = [
     link: '/masculino',
   },
   {
-    titulo: "FEMINIO",
+    titulo: "FEMININO",
     image: Feminino,
     link: '/feminino',
   },
   {
-    titulo: "ESPORTES",
+    titulo: "ACESSÓRIOS",
     image: Sporting,
-    link: '/login',
+    link: '/acessorios',
   },
   {
-    titulo: "INFANTIL",
+    titulo: "CALÇADOS",
     image: Infantil,
-    link: '/produtos',
+    link: '/calcados',
   },
 
 ]

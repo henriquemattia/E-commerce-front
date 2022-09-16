@@ -54,7 +54,7 @@ import './styles.css'
             return (
               <Post 
               key={index}
-              image={camisa}
+              image={prod.img_main}
               name={prod.nome}
               valor={prod.preco}
               desc_valor={prod.desc_preco}

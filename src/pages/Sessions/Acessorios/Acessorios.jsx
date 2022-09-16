@@ -3,10 +3,10 @@ import Topbar from '../../../components/NavBar/NavBar';
 
 // import { Container } from './styles';
 
-function Esportes() {
+function Acessorios() {
   return (
     <Topbar />
   )
 }
 
-export default Esportes;
+export default Acessorios;

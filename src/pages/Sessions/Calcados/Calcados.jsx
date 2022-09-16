@@ -3,10 +3,10 @@ import Topbar from '../../../components/NavBar/NavBar';
 
 // import { Container } from './styles';
 
-function Infaltil() {
+function Calcados() {
   return (
     <Topbar />
   )
 }
 
-export default Infaltil;
+export default Calcados;

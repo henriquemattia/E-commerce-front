@@ -25,8 +25,8 @@ import axios from 'axios';
     try {
       const url = 'http://127.0.0.1:5000/masculino'
       const res = await axios.get(url)
+      // console.log(res);
        setMasculino(res.data.dados);
-       console.log(res.data.dados);
       //  console.log(res.data.dados);
     } catch (err) {
       console.log(err);
@@ -42,31 +42,30 @@ import axios from 'axios';
     }
     },[])
     return(
-    <>
-      <Topbar />
-      <br />
-      <br />
-      <br />
-        <Container>
-        <Row>
-        {masculino.map((prod, index) => {
-            return (
-              <Post 
-              key={index}
-              categoria={prod.categoria}
-              name={prod.nome}
-              valor={prod.preco}
-              desc_valor={prod.desc_preco}
-              image={camisa}
-              rota={prod.rota}
-              />
-            )  
-          })}
-          </Row>
-      </Container>
-
-    </>
-  )
+      <>
+        <Topbar />
+        <br />
+        <br />
+        <br />
+          <Container>
+          <Row>
+          {masculino.map((prod, index) => {
+              return (
+                <Post 
+                key={index}
+                image={prod.img_main}
+                name={prod.nome}
+                valor={prod.preco}
+                desc_valor={prod.desc_preco}
+                route={<Link className='tag-a'to={`/${prod.categoria}/${prod.rota}`}></Link>}
+                />
+              )  
+            })}
+            </Row>
+        </Container>
+  
+      </>
+    )
 }
 
 

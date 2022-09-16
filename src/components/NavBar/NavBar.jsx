@@ -46,7 +46,7 @@ function Topbar() {
 
 
                 <NavDropdown  title='Mais opcões'>
-                  <NavDropdown.Item eventKey="4.1" >Login</NavDropdown.Item>
+                  <NavDropdown.Item eventKey="4.1" href='/login' >Login</NavDropdown.Item>
                   <NavDropdown.Item eventKey="4.2">Another action</NavDropdown.Item>
                   <NavDropdown.Item eventKey="4.3">Something else here</NavDropdown.Item>
                   <NavDropdown.Divider />
