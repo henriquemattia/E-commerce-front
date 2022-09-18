@@ -122,7 +122,7 @@ function Product() {
               <div className='cep-value text-cinza'>
                 <span>00000-000</span>
               </div>
-             <button className='calc-btn'>CALCULAR</button>
+              <button className='calc-btn'>CALCULAR</button>
             </div>
         </div>
         <Container>

@@ -20,9 +20,16 @@
 
 .abaixo {
     margin-top: 20px;
-    height: 90px;
+    height: 100px;
     width: auto;
 }
+
+.abaixo:hover{
+    zoom: 105%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+
 
 .name{
     margin-top: 20px;
