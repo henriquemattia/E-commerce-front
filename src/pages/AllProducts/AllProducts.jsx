@@ -54,11 +54,12 @@ import './styles.css'
             return (
               <Post 
               key={index}
-              image={prod.img_main}
+              categoria={prod.categoria}
               name={prod.nome}
               valor={prod.preco}
               desc_valor={prod.desc_preco}
-              route={<Link className='tag-a'to={`/${prod.categoria}/${prod.rota}`}></Link>}
+              image={prod.img_main}
+              rota={prod.rota}
               />
             )  
           })}

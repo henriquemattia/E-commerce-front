@@ -50,17 +50,18 @@ import axios from 'axios';
           <Container>
           <Row>
           {masculino.map((prod, index) => {
-              return (
-                <Post 
-                key={index}
-                image={prod.img_main}
-                name={prod.nome}
-                valor={prod.preco}
-                desc_valor={prod.desc_preco}
-                route={<Link className='tag-a'to={`/${prod.categoria}/${prod.rota}`}></Link>}
-                />
-              )  
-            })}
+            return (
+              <Post 
+              key={index}
+              categoria={prod.categoria}
+              name={prod.nome}
+              valor={prod.preco}
+              desc_valor={prod.desc_preco}
+              image={prod.img_main}
+              rota={prod.rota}
+              />
+            )  
+          })}
             </Row>
         </Container>
   
