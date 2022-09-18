@@ -26,22 +26,23 @@ function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
-
         <Route path='/' index element={<Home />} />
+
+                {/* LOGIN E REGISTRO */}
         <Route  path='/login' element={<Login />} />
         <Route  path='/register' element={<Registro />} />
          
-             {/* PRODUTOS */}
+                {/* PRODUTOS POR CATEGORIA*/}
         <Route path='/masculino' element={<Masculino />}/>
         <Route path='/feminino' element={<Feminino />}/>
         <Route path='/acessorios' element={<Acessorios />}/>
         <Route path='/calcados' element={<Calcados />}/>
 
-
+                {/* TODOS OS PRODUTOS */}
         <Route path='/produtos' element={<AllProducts />}/>
         
 
-
+                {/* PAGINA DE COMPRA DE PRODUTO */}
         <Route  path='/:categoria/:id' element={<Product/>} />
       </Routes>
     </BrowserRouter>

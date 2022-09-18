@@ -40,9 +40,9 @@ function Topbar() {
 
                 <Nav.Link href="/produtos">TODOS OS PRODUTOS</Nav.Link>
                   <Nav.Link href="/feminino">Feminino</Nav.Link>
-                  <Nav.Link href="/infantil">Masculino</Nav.Link>
-                  <Nav.Link href="/esportes">Acessórios</Nav.Link>
-                  <Nav.Link href="/esportes">Calçados</Nav.Link>
+                  <Nav.Link href="/masculino">Masculino</Nav.Link>
+                  <Nav.Link href="/acessórios">Acessórios</Nav.Link>
+                  <Nav.Link href="/calcados">Calçados</Nav.Link>
 
 
                 <NavDropdown  title='Mais opcões'>

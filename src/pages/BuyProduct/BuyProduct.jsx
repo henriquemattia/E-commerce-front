@@ -13,8 +13,9 @@ import Footer from '../../components/Footer/Footer';
 import { useParams } from 'react-router-dom';
 
 
-function Product() {
 
+
+function Product() {
   const [dest, setDest] = useState([])
   const [prod, setProd] = useState([])
 
@@ -31,7 +32,6 @@ function Product() {
     }
   }
 
-
   useEffect(() => {
     getProduts()
     console.log('componetne construido');
@@ -41,13 +41,7 @@ function Product() {
   }, [])
 
   const parms = useParams()
-  // console.log(parms);
-  // console.log(parms.id);
-
-
   dest.find((p) => p.rota === parms.id)
-  // console.log(parms.id);
-  // console.log(parms.rota);
 
   useEffect(() => {
     dest.map((nam) => {
@@ -55,56 +49,76 @@ function Product() {
         console.log(nam)
 
         setProd(nam)
-      } 
+      }
     }
     )
   }, [dest])
-  console.log(prod)
-  // console.log(dest)
-  
+  // console.log(prod)
+
+
+  //// LÓGICA PARA TROCA DE FOCO DE PRODUTO
+
+  const [imagemPrincipal, setImagensPrincipal] = useState([])
+
+  useEffect(()=>{
+
+    setImagensPrincipal(prod.img_main)
+  },[prod])
+
   return (
-    <div className='all'>
-      <Topbar />
-      <Container>
-        <Image src={prod.img_main} alt="homerm" className='imagem1' />
-        <Row>
-          <Col><Image src={prod.img_front} alt="homerm" className='abaixo' /></Col>
-          <Col><Image src={prod.img_right} alt="homerm" className='abaixo' /></Col>
-          <Col><Image src={prod.img_left} alt="homerm" className='abaixo' /></Col>
-          <Col><Image src={prod.img_back} alt="homerm" className='abaixo' /></Col>
-        </Row>
-      </Container>
+    <>
+      <div className='all'>
+        <Topbar />
 
-      <Container>
-        <h2 className='name'>{prod.nome}</h2>
-        <div className='divisor cinza'></div>
-        <div className='prices'>
-          <span className='tamanho desc_price text-cinza'>R$ {prod.desc_preco}</span>
-          <span className='tamanho price' >R$ {prod.preco}</span>
+        <Container>
+          <Image src={imagemPrincipal} alt="homerm" className='imagem1' />
+          <Row xs={5}>
+            <Col><Image src={prod.img_main} alt="homerm" className='abaixo' onClick={()=>{setImagensPrincipal(prod.img_main)}} /></Col>
+            <Col><Image src={prod.img_front} alt="homerm" className='abaixo' onClick={()=>{setImagensPrincipal(prod.img_front)}} /></Col>
+            <Col><Image src={prod.img_left} alt="homerm" className='abaixo' onClick={()=>{setImagensPrincipal(prod.img_right)}} /></Col>
+            <Col><Image src={prod.img_right} alt="homerm" className='abaixo' onClick={()=>{setImagensPrincipal(prod.img_left)}} /></Col>
+            <Col><Image src={prod.img_back} alt="homerm" className='abaixo' onClick={()=>{setImagensPrincipal(prod.img_back)}} /></Col>
+          </Row>
+        </Container>
+
+        <Container>
+          <h2 className='name'>{prod.nome}</h2>
+          <div className='divisor cinza'></div>
+          <div className='prices'>
+            <span className='tamanho desc_price text-cinza'>R$ {prod.desc_preco}</span>
+            <span className='tamanho price' >R$ {prod.preco}</span>
+          </div>
+
+          <p className='text-cinza description'>Ultimas únidades desse modelo aproveite!</p>
+        </Container>
+        <div>
+          <div className='buy-area'> <div className='mais-e-menos'><button className='branco text-cinza'>-</button><span>1</span><button className='branco text-cinza'>+</button> </div><button className='buy-btn'>COMPRAR</button></div>
         </div>
+        <br />
+        <Container>
+          <strong>CALCULE O VALOR DO FRETE</strong>
+        </Container>
+        <div>
+          <div className='cep-area'> <div className='cep-value text-cinza'><span>00000-000</span></div><button className='calc-btn'>CALCULAR</button></div>
+        </div>
+        <Container>
+          <p className='sub-description text-cinza'>SKU: 2938472874-AZUL</p>
+          <p className='sub-description text-cinza'>Categoria: {prod.categoria}</p>
+          <p className='sub-description text-cinza'>TAG: Lançamentos</p>
 
-        <p className='text-cinza description'>Ultimas únidades desse modelo aproveite!</p>
-      </Container>
-      <div>
-        <div className='buy-area'> <div className='mais-e-menos'><button className='branco text-cinza'>-</button><span>1</span><button className='branco text-cinza'>+</button> </div><button className='buy-btn'>COMPRAR</button></div>
+        </Container>
+        <br />
+        <Footer />
+
       </div>
-      <br />
-      <Container>
-        <strong>CALCULE O VALOR DO FRETE</strong>
-      </Container>
-      <div>
-        <div className='cep-area'> <div className='cep-value text-cinza'><span>00000-000</span></div><button className='calc-btn'>CALCULAR</button></div>
-      </div>
-      <Container>
-        <p className='sub-description text-cinza'>SKU: 2938472874-AZUL</p>
-        <p className='sub-description text-cinza'>Categoria: {prod.categoria}</p>
-        <p className='sub-description text-cinza'>TAG: Lançamentos</p>
 
-      </Container>
-      <br />
-      <Footer />
 
-    </div>
+    </>
+
+
+
   )
+
 }
+
 export default Product;
