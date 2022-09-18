@@ -58,12 +58,20 @@ function Product() {
 
   //// LÓGICA PARA TROCA DE FOCO DE PRODUTO
 
-  const [imagemPrincipal, setImagensPrincipal] = useState([])
+  const [imagemPrincipal, setImagemPrincipal] = useState([])
 
-  useEffect(()=>{
+  useEffect(() => {
 
-    setImagensPrincipal(prod.img_main)
-  },[prod])
+    setImagemPrincipal(prod.img_main)
+  }, [prod])
+
+  ///// LÓGICA PARA ADICIONAR MAIS UM PORODUTO
+  const [qntProd, setQntProd] = useState(0)
+
+  useEffect(() => {
+
+    setQntProd(1)
+  }, [])
 
   return (
     <>
@@ -73,11 +81,11 @@ function Product() {
         <Container>
           <Image src={imagemPrincipal} alt="homerm" className='imagem1' />
           <Row xs={5}>
-            <Col><Image src={prod.img_main} alt="homerm" className='abaixo' onClick={()=>{setImagensPrincipal(prod.img_main)}} /></Col>
-            <Col><Image src={prod.img_front} alt="homerm" className='abaixo' onClick={()=>{setImagensPrincipal(prod.img_front)}} /></Col>
-            <Col><Image src={prod.img_left} alt="homerm" className='abaixo' onClick={()=>{setImagensPrincipal(prod.img_right)}} /></Col>
-            <Col><Image src={prod.img_right} alt="homerm" className='abaixo' onClick={()=>{setImagensPrincipal(prod.img_left)}} /></Col>
-            <Col><Image src={prod.img_back} alt="homerm" className='abaixo' onClick={()=>{setImagensPrincipal(prod.img_back)}} /></Col>
+            <Col><Image src={prod.img_main} alt="homerm" className='abaixo' onClick={() => { setImagemPrincipal(prod.img_main) }} /></Col>
+            <Col><Image src={prod.img_front} alt="homerm" className='abaixo' onClick={() => { setImagemPrincipal(prod.img_front) }} /></Col>
+            <Col><Image src={prod.img_left} alt="homerm" className='abaixo' onClick={() => { setImagemPrincipal(prod.img_right) }} /></Col>
+            <Col><Image src={prod.img_right} alt="homerm" className='abaixo' onClick={() => { setImagemPrincipal(prod.img_left) }} /></Col>
+            <Col><Image src={prod.img_back} alt="homerm" className='abaixo' onClick={() => { setImagemPrincipal(prod.img_back) }} /></Col>
           </Row>
         </Container>
 
@@ -92,14 +100,30 @@ function Product() {
           <p className='text-cinza description'>Ultimas únidades desse modelo aproveite!</p>
         </Container>
         <div>
-          <div className='buy-area'> <div className='mais-e-menos'><button className='branco text-cinza'>-</button><span>1</span><button className='branco text-cinza'>+</button> </div><button className='buy-btn'>COMPRAR</button></div>
+          <div className='buy-area'>
+            <div className='mais-e-menos'>
+              <button className='branco text-cinza' onClick={() => { 
+                let sub = qntProd - 1
+                setQntProd(sub) }} >-</button>
+
+                <span>{qntProd}</span>
+              <button className='branco text-cinza'onClick={() => {
+                let sum = qntProd + 1
+                setQntProd(sum) }}>+</button>
+            </div><button className='buy-btn'>COMPRAR</button>
+          </div>
         </div>
         <br />
         <Container>
           <strong>CALCULE O VALOR DO FRETE</strong>
         </Container>
         <div>
-          <div className='cep-area'> <div className='cep-value text-cinza'><span>00000-000</span></div><button className='calc-btn'>CALCULAR</button></div>
+          <div className='cep-area'> 
+              <div className='cep-value text-cinza'>
+                <span>00000-000</span>
+              </div>
+             <button className='calc-btn'>CALCULAR</button>
+            </div>
         </div>
         <Container>
           <p className='sub-description text-cinza'>SKU: 2938472874-AZUL</p>
