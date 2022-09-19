@@ -103,13 +103,28 @@ function Product() {
           <div className='buy-area'>
             <div className='mais-e-menos'>
               <button className='branco text-cinza' onClick={() => { 
-                let sub = qntProd - 1
-                setQntProd(sub) }} >-</button>
+
+               if (qntProd <= 1) {
+                  setQntProd(1)
+                } else {
+                  let sub = qntProd - 1
+                setQntProd(sub)
+                }
+
+
+                 }} >-</button>
 
                 <span>{qntProd}</span>
               <button className='branco text-cinza'onClick={() => {
-                let sum = qntProd + 1
-                setQntProd(sum) }}>+</button>
+
+                if (qntProd >= 10) {
+                  setQntProd(10)
+                } else {
+                  let sum = qntProd + 1
+                setQntProd(sum)
+                }
+
+                 }}>+</button>
             </div><button className='buy-btn'>COMPRAR</button>
           </div>
         </div>
