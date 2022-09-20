@@ -83,8 +83,8 @@ function Product() {
           <Row xs={5}>
             <Col><Image src={prod.img_main} alt="homerm" className='abaixo' onClick={() => { setImagemPrincipal(prod.img_main) }} /></Col>
             <Col><Image src={prod.img_front} alt="homerm" className='abaixo' onClick={() => { setImagemPrincipal(prod.img_front) }} /></Col>
-            <Col><Image src={prod.img_left} alt="homerm" className='abaixo' onClick={() => { setImagemPrincipal(prod.img_right) }} /></Col>
             <Col><Image src={prod.img_right} alt="homerm" className='abaixo' onClick={() => { setImagemPrincipal(prod.img_left) }} /></Col>
+            <Col><Image src={prod.img_left} alt="homerm" className='abaixo' onClick={() => { setImagemPrincipal(prod.img_right) }} /></Col>
             <Col><Image src={prod.img_back} alt="homerm" className='abaixo' onClick={() => { setImagemPrincipal(prod.img_back) }} /></Col>
           </Row>
         </Container>
@@ -104,7 +104,7 @@ function Product() {
             <div className='mais-e-menos'>
               <button className='branco text-cinza' onClick={() => { 
 
-               if (qntProd <= 1) {
+               if (qntProd == 1) {
                   setQntProd(1)
                 } else {
                   let sub = qntProd - 1
@@ -117,7 +117,7 @@ function Product() {
                 <span>{qntProd}</span>
               <button className='branco text-cinza'onClick={() => {
 
-                if (qntProd >= 10) {
+                if (qntProd == 10) {
                   setQntProd(10)
                 } else {
                   let sum = qntProd + 1

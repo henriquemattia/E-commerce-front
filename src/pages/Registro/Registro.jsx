@@ -1,17 +1,19 @@
 import React from 'react';
 import { useForm } from 'react-hook-form'
 
-
 import Container from 'react-bootstrap/esm/Container';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 
 
 function Registro() {
+
+    const navigate = useNavigate()
+
 
     const { register, reset, handleSubmit, formState: { errors } } = useForm()
 
@@ -25,7 +27,6 @@ function Registro() {
                 username: data.username,
                 email: data.email,
                 password: data.password,
-                confirmPassword: data.confirmPassword
             }
             const reqOptions =
             {
@@ -37,12 +38,19 @@ function Registro() {
                 body: JSON.stringify(body)
             }
              
-            fetch('http://localhost:5000/users', reqOptions)
-                .then(res => res.json())
-                .then(data => console.log(data))
-                .catch(err => console.log(err))
 
-            console.log(data)
+            fetch('http://localhost:5050/auth/register', reqOptions)
+                .then(res => res.json())
+                .then((data)=>{
+                    if(!data.token){
+                        alert("Email já cadastrado!")
+                    }else{
+                    navigate("/login")
+
+                    }
+                })
+                // .then(data => console.log(data))
+                .catch(err => console.log(err))
             reset()
         }
         else {
@@ -61,9 +69,10 @@ function Registro() {
 
                     {/* USERNAME */}
 
-                    <Form.Group className="mb-3" controlId="formGroupEmail">
+                    <Form.Group className="mb-3 asda" controlId="formGroupEmail">
                         <Form.Label>Nome</Form.Label>
-                        <Form.Control type="text"
+                        <Form.Control 
+                            type="text"
                             placeholder="Nome completo"
                             {...register("username", { required: true, maxLength: 25 })}
                         />

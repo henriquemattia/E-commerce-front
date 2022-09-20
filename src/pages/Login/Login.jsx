@@ -1,17 +1,22 @@
 import React from 'react';
 import { useForm } from 'react-hook-form'
+import axios from 'axios';
 
 
 import Container from 'react-bootstrap/esm/Container';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 
 
 
 function Login() {
+
+    const navigate = useNavigate()
 
     const { register, reset, handleSubmit, formState: { errors } } = useForm()
 
@@ -33,14 +38,28 @@ function Login() {
                 },
                 body: JSON.stringify(body)
             }
-            fetch('http://localhost:5000/login', reqOptions)
-            .then(res => res.json())
-            .then(data=>console.log(data))
-            .catch(err=>console.log(err))
 
-            console.log(data)
-            reset()
+            
+            
+
+
+            fetch('http://localhost:5050/auth/login', reqOptions)
+            .then(res => res.json())
+            .then((data) =>{
+                if (!data.token) {
+                    alert("Usuario ou senha incorretos");
+                    
+                } else {
+                    navigate("/")
+                }
+            })
+            .catch(err =>console.log(err))
+            // reset()
+
+            
     }
+
+    
 
 
     return (
