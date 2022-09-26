@@ -24,7 +24,7 @@ function Registro() {
         if (data.password === data.confirmPassword) {
 
             const body = {
-                username: data.username,
+                name: data.username,
                 email: data.email,
                 password: data.password,
             }
@@ -39,9 +39,10 @@ function Registro() {
             }
              
 
-            fetch('http://localhost:5050/auth/register', reqOptions)
+            fetch('http://localhost:5000/register', reqOptions)
                 .then(res => res.json())
                 .then((data)=>{
+                    console.log(data)
                     if(!data.token){
                         alert("Email já cadastrado!")
                     }else{
@@ -69,7 +70,7 @@ function Registro() {
 
                     {/* USERNAME */}
 
-                    <Form.Group className="mb-3 asda" controlId="formGroupEmail">
+                    <Form.Group className="mb-3 asda" controlId="formGroupName">
                         <Form.Label>Nome</Form.Label>
                         <Form.Control 
                             type="text"
@@ -116,7 +117,7 @@ function Registro() {
                     {/* COMFIMAÇÃO DE SENHA */}
 
 
-                    <Form.Group className="mb-3" controlId="formGroupPassword">
+                    <Form.Group className="mb-3">
                         <Form.Label>Confime sua Senha</Form.Label>
                         <Form.Control type="password" placeholder="A senha deve ser igual a senha acima"
                             {...register("confirmPassword", { required: true, minLength: 8 })}

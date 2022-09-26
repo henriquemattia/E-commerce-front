@@ -43,7 +43,7 @@ function Login() {
             
 
 
-            fetch('http://localhost:5050/auth/login', reqOptions)
+            fetch('http://localhost:5000/login', reqOptions)
             .then(res => res.json())
             .then((data) =>{
                 if (!data.token) {

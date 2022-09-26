@@ -12,7 +12,7 @@ function Post(props) {
         <>
             <Col className='col-6'>
                 <Link to={`/${props.categoria}/${props.rota}`} className='tag-a'>
-                    <Card className='pbt '>
+                    <Card className='pbt tag-a'>
 
                         <Card.Img className="imgg" variant="top" src={props.image} />
                         <Card.Body className="ajj">
