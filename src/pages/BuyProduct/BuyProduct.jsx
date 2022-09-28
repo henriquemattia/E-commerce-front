@@ -53,7 +53,7 @@ function Product() {
     }
     )
   }, [dest])
-  // console.log(prod)
+  console.log(prod)
 
 
   //// LÓGICA PARA TROCA DE FOCO DE PRODUTO

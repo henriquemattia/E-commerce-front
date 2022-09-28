@@ -19,6 +19,7 @@ import Masculino from './pages/Sessions/Masculino/Masculino';
 import Feminino from './pages/Sessions/Feminino/Feminino';
 import Calcados from './pages/Sessions/Calcados/Calcados';
 import Acessorios from './pages/Sessions/Acessorios/Acessorios';
+import Cart from './pages/Cart/Cart';
 
 
 
@@ -43,7 +44,8 @@ function AppRouter() {
         
 
                 {/* PAGINA DE COMPRA DE PRODUTO */}
-        <Route  path='/:categoria/:id' element={<Product/>} />
+        <Route path='/:categoria/:id' element={<Product/>} />
+        <Route path='/carrinho' element={<Cart />} />
       </Routes>
     </BrowserRouter>
   )

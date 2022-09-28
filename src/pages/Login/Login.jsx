@@ -46,6 +46,7 @@ function Login() {
             fetch('http://localhost:5000/login', reqOptions)
             .then(res => res.json())
             .then((data) =>{
+                console.log(data);
                 if (!data.token) {
                     alert("Usuario ou senha incorretos");
                     
@@ -54,7 +55,7 @@ function Login() {
                 }
             })
             .catch(err =>console.log(err))
-            // reset()
+            reset()
 
             
     }
