@@ -1,12 +1,4 @@
-.titul{
-    margin-top: 20vh;
+.container_body{
+    margin: 18% 10% 0;
     border: 1px solid red;
-    color: black;
-    height: 200px;
-    width: 150PX;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    margin-left: 25vh;
-    transform: translate(-50%, -50%);
 }
