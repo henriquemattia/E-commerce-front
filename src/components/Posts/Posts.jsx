@@ -11,6 +11,7 @@ import Post from './Post/Post'
 import './styles.css'
 import { Link } from 'react-router-dom';
 
+import { api } from '../../services/api/Api';
 
 function Posts() {
 
@@ -18,8 +19,8 @@ function Posts() {
 
   const getProduts = async () => {
     try {
-      const url = 'http://127.0.0.1:5000/destaque'
-      const res = await axios.get(url)
+      const url = '/destaque'
+      const res = await api.get(url)
        setDest(res.data.dados);
        console.log(res.data.dados);
       //  console.log(res.data.dados);

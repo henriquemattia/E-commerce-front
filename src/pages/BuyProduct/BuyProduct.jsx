@@ -15,6 +15,7 @@ import { useParams } from 'react-router-dom';
 
 import Cookies from 'js-cookie'
 import { useCart } from 'react-use-cart';
+import { api } from '../../services/api/Api';
 
 
 
@@ -24,8 +25,8 @@ function Product() {
 
   const getProduts = async () => {
     try {
-      const url = 'http://127.0.0.1:5000/produtos'
-      const res = await axios.get(url)
+      const url = '/produtos'
+      const res = await api.get(url)
       setDest(res.data.dados);
       // console.log(res.data.dados);
       //  console.log(res.data.dados);

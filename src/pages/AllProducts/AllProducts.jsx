@@ -12,6 +12,7 @@ import { Link } from 'react-router-dom';
 
 import Post from '../../components/Posts/Post/Post';
 import './styles.css'
+import { api } from '../../services/api/Api';
 
 
 //colcoar tudo dentro de uma vide para tentar alinhar tudo confome vai almentando a tela
@@ -24,8 +25,8 @@ import './styles.css'
 
   const getProduts = async () => {
     try {
-      const url = 'http://127.0.0.1:5000/produtos'
-      const res = await axios.get(url)
+      const url = '/produtos'
+      const res = await api.get(url)
        setDest(res.data.dados);
        console.log(res.data.dados);
       //  console.log(res.data.dados);

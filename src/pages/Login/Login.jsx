@@ -10,6 +10,7 @@ import Button from 'react-bootstrap/Button';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { api } from '../../services/api/Api';
 
 
 
@@ -43,7 +44,7 @@ function Login() {
             
 
 
-            fetch('http://localhost:5000/login', reqOptions)
+            fetch(`${api}/login`, reqOptions)
             .then(res => res.json())
             .then((data) =>{
                 console.log(data);

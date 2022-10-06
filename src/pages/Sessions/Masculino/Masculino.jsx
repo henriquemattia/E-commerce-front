@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import Post from '../../../components/Posts/Post/Post';
 
 import axios from 'axios';
+import { api } from '../../../services/api/Api';
 
 // import './styles.css'
 
@@ -23,8 +24,8 @@ import axios from 'axios';
 
   const getProduts = async () => {
     try {
-      const url = 'http://127.0.0.1:5000/masculino'
-      const res = await axios.get(url)
+      const url = '/masculino'
+      const res = await api.get(url)
       // console.log(res);
        setMasculino(res.data.dados);
       //  console.log(res.data.dados);

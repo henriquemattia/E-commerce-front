@@ -6,7 +6,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
 import { Link, useNavigate } from 'react-router-dom';
-
+import { api } from '../../services/api/Api';
 
 
 
@@ -39,7 +39,7 @@ function Registro() {
             }
              
 
-            fetch('http://localhost:5000/register', reqOptions)
+            fetch(`${api}/login`, reqOptions)
                 .then(res => res.json())
                 .then((data)=>{
                     console.log(data)
