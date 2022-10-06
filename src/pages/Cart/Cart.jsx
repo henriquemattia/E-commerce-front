@@ -55,9 +55,9 @@ function Cart() {
                   <div className='rigth_content'>
                       <button className='close_button' onClick={() => removeItem(prod.id)}>&times;</button>
                     <div className='button_content'>
-                      <button onClick={() => updateItemQuantity(prod.id, prod.quantity + 1)}> + </button>
+                      <button className='button_quantity' onClick={() => updateItemQuantity(prod.id, prod.quantity + 1)}> + </button>
                       <p>{prod.quantity}</p>
-                      <button onClick={() => updateItemQuantity(prod.id, prod.quantity - 1)}> - </button>
+                      <button className='button_quantity' onClick={() => updateItemQuantity(prod.id, prod.quantity - 1)}> - </button>
                     </div>
                   </div>
 

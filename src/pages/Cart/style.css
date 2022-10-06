@@ -23,7 +23,7 @@
     width: 95%;
     height: 20vh;
     display: flex;
-    padding:0 0 7% 0;
+    padding: 7% 0;
 }
 
 .left_content{
@@ -40,7 +40,7 @@
 }
 
 .rigth_content{
-    border: solid purple 1px;
+    /* border: solid purple 1px; */
     width: 25%;
     height: 100%;
     display: flex;
@@ -53,9 +53,6 @@
     height: auto;
 }
 
-.button_content{
-    border: 1px solid black;
-}
 
 .close_button{
     display: flex;
@@ -63,4 +60,19 @@
     margin-left: 15%;
     justify-self: center;
     position: absolute;
+}
+.button_content{
+    border:  1px solid rgba(135, 135, 135, 0.511);;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    width: 40%;
+    height: 68%;
+}
+
+.button_quantity{
+    color: rgb(135, 135, 135);
+    background-color: white;
+    border: none;
 }
