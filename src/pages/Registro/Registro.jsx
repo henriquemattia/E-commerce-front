@@ -23,35 +23,27 @@ function Registro() {
 
         if (data.password === data.confirmPassword) {
 
-            const body = {
-                name: data.username,
-                email: data.email,
-                password: data.password,
-            }
-            const reqOptions =
-            {
-                method: "POST",
-                headers:
-                {
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify(body)
-            }
-             
-
-            fetch(`${api}/login`, reqOptions)
-                .then(res => res.json())
-                .then((data)=>{
-                    console.log(data)
-                    if(!data.token){
-                        alert("Email já cadastrado!")
-                    }else{
-                    navigate("/login")
-
-                    }
+            const getProduts = async () => {
+                
+                try {
+                  const url = '/register'
+                  const res = await api.post(url, {
+                    name: data.username,
+                    email: data.email,
+                    password: data.password,
                 })
-                // .then(data => console.log(data))
-                .catch(err => console.log(err))
+                if(!res.data.token){
+                    alert("Email já cadastrado!")
+                }else{
+                     navigate("/login")
+                    }
+                
+                  console.log(res);
+                } catch (err) {
+                  console.log(err);
+                }
+              } 
+              getProduts()
             reset()
         }
         else {
