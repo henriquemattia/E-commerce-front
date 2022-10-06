@@ -60,6 +60,12 @@
     margin-left: 15%;
     justify-self: center;
     position: absolute;
+    border: none;
+    /* border-radius: 30px; */
+    color: black;
+    background-color: transparent;
+    font-size: 1.3rem;
+
 }
 .button_content{
     border:  1px solid rgba(135, 135, 135, 0.511);;
