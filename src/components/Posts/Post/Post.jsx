@@ -17,7 +17,7 @@ function Post(props) {
                         <Card.Img className="imgg" variant="top" src={props.image} />
                         <Card.Body className="ajj">
                             <div className='post-name'>
-                                {props.name}
+                            {props.name.toUpperCase()}
                             </div>
                             <div className='post-price'>
                                 <p>DE: R$: {props.desc_valor}</p>

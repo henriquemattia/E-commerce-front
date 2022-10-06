@@ -47,7 +47,7 @@ function Posts() {
               key={index}
               categoria={prod.categoria}
               name={prod.nome}
-              valor={prod.preco}
+              valor={prod.price}
               desc_valor={prod.desc_preco}
               image={prod.img_main}
               rota={prod.rota}

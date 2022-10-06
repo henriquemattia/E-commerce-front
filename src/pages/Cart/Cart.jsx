@@ -15,10 +15,12 @@ function Cart() {
     isEmpty,
     totalUniqueItems,
     items,
+    cartTotal,
     updateItemQuantity,
     removeItem,
   } = useCart();
 
+  // CARRINHO VAZIO
   if (isEmpty) {
     return (
       <>
@@ -29,37 +31,47 @@ function Cart() {
 
     );
   }
-
+  // CARRINHO COM ALGUMA COISA DENTRO 
   return (
     <>
       <Topbar />
 
       <div className='container_body'>
+        <h1>CARRINHO</h1>
+        <div className='container_produtos'>
+            {items.map((prod) => {
+              return (
+              <>
+              
 
-        <h1>Total de itens no carrinho ({totalUniqueItems})</h1>
+                <div key={prod.id} className='contianer_main'>
+                  <div className='left_content'>
+                    <img className='product_image' src={prod.img_main} alt="" />
+                  </div>
+                  <div className='center_content'>
+                    <p>{prod.nome}</p>
+                    <p>1x de <span>{prod.price}</span></p>
+                  </div>
+                  <div className='rigth_content'>
+                      <button className='close_button' onClick={() => removeItem(prod.id)}>&times;</button>
+                    <div className='button_content'>
+                      <button onClick={() => updateItemQuantity(prod.id, prod.quantity + 1)}> + </button>
+                      <p>{prod.quantity}</p>
+                      <button onClick={() => updateItemQuantity(prod.id, prod.quantity - 1)}> - </button>
+                    </div>
+                  </div>
 
-        <ul>
-          {items.map((item) => (
 
-            <li key={item.id}>
-              <h2>{item.nome}</h2>
-              <h3>{item.quantity}</h3>
-              <Card.Img src={item.img_main} alt="" />
-              <h2>{item.price}</h2>
-              <button
-                onClick={() => updateItemQuantity(item.id, item.quantity - 1)}
-              >
-                -
-              </button>
-              <button
-                onClick={() => updateItemQuantity(item.id, item.quantity + 1)}
-              >
-                +
-              </button>
-              <button onClick={() => removeItem(item.id)}>&times;</button>
-            </li>
-          ))}
-        </ul>
+                </div>
+              </>
+
+              )
+
+            })}
+
+        </div>
+
+
 
       </div>
 
