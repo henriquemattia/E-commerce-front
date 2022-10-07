@@ -8,8 +8,6 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
 import { Link, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
-import { useEffect } from 'react';
 import { api } from '../../services/api/Api';
 
 
@@ -24,39 +22,43 @@ function Login() {
     const submitForm = (data) => {
 
 
-
-            const body = {
+        const getProduts = async () => {
+                
+            try {
+              const url = '/login'
+              const res = await api.post(url, {
                 email: data.email,
                 password: data.password,
-            }
-
-            const reqOptions =
-            {
-                method: "POST",
-                headers:
-                {
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify(body)
-            }
-
-            
-            
-
-
-            fetch(`${api}/login`, reqOptions)
-            .then(res => res.json())
-            .then((data) =>{
-                console.log(data);
-                if (!data.token) {
-                    alert("Usuario ou senha incorretos");
-                    
-                } else {
-                    navigate("/")
-                }
             })
-            .catch(err =>console.log(err))
-            reset()
+            
+
+
+            if(!res.data.token){
+                alert("Usuario ou senha incorretos")
+            }else{
+                 navigate("/")
+                }
+              console.log(res);
+            } catch (err) {
+              console.log(err);
+            }
+          } 
+          getProduts()
+        reset()
+
+            // fetch(`${api}/login`, reqOptions)
+            // .then(res => res.json())
+            // .then((data) =>{
+            //     console.log(data);
+            //     if (!data.token) {
+            //         alert("Usuario ou senha incorretos");
+                    
+            //     } else {
+            //         navigate("/")
+            //     }
+            // })
+            // .catch(err =>console.log(err))
+            // reset()
 
             
     }
