@@ -13,22 +13,22 @@ import Masculino from '../../images/quadros/homen.jpeg'
 const quadros = [
   {
     titulo: "MASCULINO",
-    image: Masculino,
+    image: 'https://i.imgur.com/hZQEDE2.jpeg',
     link: '/masculino',
   },
   {
     titulo: "FEMININO",
-    image: Feminino,
+    image: 'https://i.imgur.com/w9PmbmI.jpeg',
     link: '/feminino',
   },
   {
     titulo: "ACESSÓRIOS",
-    image: Sporting,
+    image: 'https://i.imgur.com/XO8MOWc.jpeg',
     link: '/acessorios',
   },
   {
     titulo: "CALÇADOS",
-    image: Infantil,
+    image: 'https://i.imgur.com/vw06NX1.jpeg',
     link: '/calcados',
   },
 

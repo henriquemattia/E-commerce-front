@@ -54,12 +54,12 @@ import { api } from '../../../services/api/Api';
             return (
               <Post 
               key={index}
-              categoria={prod.categoria}
-              name={prod.nome}
-              valor={prod.preco}
-              desc_valor={prod.desc_preco}
+              category={prod.category}
+              name={prod.name}
+              price={prod.price}
+              desc_price={prod.desc_price}
               image={prod.img_main}
-              rota={prod.rota}
+              route={prod.route}
               />
             )  
           })}
