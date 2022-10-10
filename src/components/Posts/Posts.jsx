@@ -28,30 +28,40 @@ function Posts() {
       console.log(err);
     }
   }
+  
+
 
 
     useEffect(()=>{
       getProduts()
-      console.log('componetne construido'); 
-      return ()=>{
-        console.log('destruido');
-    }
+       return 
+       //()=>{
+    //     console.log('destruido');
+    // }
     },[])
     //ver soibre RATIO opara as imagens respoeotarem um tanmanho
   return (
     <>
       <Container>
         <Row>
-          {dest.map((prod, index) => {
+          {dest.map((prod) => {
+            const price = prod.price
+            const price_correct = price.toString().replace(".", ",")
+
+            const desc_price = prod.desc_price
+            const desc_price_correct = desc_price.toString().replace(".", ",")
+
+
+
             return (
               <Post 
-              key={index}
-              categoria={prod.categoria}
-              name={prod.nome}
-              valor={prod.price}
-              desc_valor={prod.desc_preco}
+              key={prod.id}
+              category={prod.category}
+              name={prod.name}
+              price={price_correct}
+              desc_price={desc_price_correct}
               image={prod.img_main}
-              rota={prod.rota}
+              route={prod.route}
               />
             )  
           })}

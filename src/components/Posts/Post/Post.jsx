@@ -11,17 +11,17 @@ function Post(props) {
     return (
         <>
             <Col className='col-6'>
-                <Link to={`/${props.categoria}/${props.rota}`} className='tag-a'>
+                <Link to={`/${props.category}/${props.route}`} className='tag-a'>
                     <Card className='pbt tag-a'>
 
                         <Card.Img className="imgg" variant="top" src={props.image} />
                         <Card.Body className="ajj">
                             <div className='post-name'>
-                            {props.name.toUpperCase()}
+                            {props.name}
                             </div>
                             <div className='post-price'>
-                                <p>DE: R$: {props.desc_valor}</p>
-                                <p>POR: R$: {props.valor}</p>
+                                <p>DE: R$: {props.price}</p>
+                                <p>POR: R$: {props.desc_price}</p>
                             </div>
                         </Card.Body>
                     </Card>

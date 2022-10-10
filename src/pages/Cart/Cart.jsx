@@ -40,6 +40,12 @@ function Cart() {
         <h1>CARRINHO</h1>
         <div className='container_produtos'>
             {items.map((prod) => {
+              const price = prod.price
+              const price_correct = price.toString().replace(".", ",")
+  
+              // const desc_price = prod.desc_price
+              // const desc_price_correct = desc_price.toString().replace(".", ",")
+  
               return (
               <>
               
@@ -49,8 +55,8 @@ function Cart() {
                     <img className='product_image' src={prod.img_main} alt="" />
                   </div>
                   <div className='center_content'>
-                    <p>{prod.nome}</p>
-                    <p>1x de <span>{prod.price}</span></p>
+                    <p>{prod.name}</p>
+                    <p>1x de <span>{price_correct}</span></p>
                   </div>
                   <div className='rigth_content'>
                       <button className='close_button' onClick={() => removeItem(prod.id)}>&times;</button>

@@ -4,16 +4,13 @@ import Topbar from '../../components/NavBar/NavBar';
 import Image from 'react-bootstrap/Image'
 
 import './styles.css'
-import axios from 'axios';
 
-import camiseta from '../../images/products/camisetao-laranja.webp'
 import Row from 'react-bootstrap/esm/Row';
 import Col from 'react-bootstrap/esm/Col';
 import Footer from '../../components/Footer/Footer';
 import { useParams } from 'react-router-dom';
 
 
-import Cookies from 'js-cookie'
 import { useCart } from 'react-use-cart';
 import { api } from '../../services/api/Api';
 
@@ -29,24 +26,22 @@ function Product() {
       const res = await api.get(url)
       setDest(res.data.dados);
       // console.log(res.data.dados);
-      //  console.log(res.data.dados);
-      //  console.log(res.data.dados);
     } catch (err) {
       console.log(err);
     }
   }
-
+  
   useEffect(() => {
     getProduts()
     return 
   }, [])
 
   const parms = useParams()
-  dest.find((p) => p.rota === parms.id)
+  // dest.find((p) => p.route === parms.route)
 
   useEffect(() => {
     dest.map((nam) => {
-      if (nam.rota == parms.id) {
+      if (nam.route == parms.route) {
         // console.log(nam)
 
         setProd(nam)
@@ -73,19 +68,8 @@ function Product() {
     setQntProd(1)
   }, [])
 
-
-  // SISTEMA DE CARINHOS COM COOKIES
-
-  // function prodCookie () {
-  //   let nome = prod.nome
-  //   let valor = prod.id 
-  //   const tud = nome +':,'+ valor
-  //   const tudo = JSON.stringify(tud)
-  //   console.log(valor);
-  //   Cookies.set('p%r%o%%d-'+nome, tudo )
-  // }
-
   const { addItem } = useCart();
+
   
   return (
     <>
@@ -95,20 +79,20 @@ function Product() {
         <Container>
           <Image src={imagemPrincipal} alt="homerm" className='imagem1' />
           <Row xs={5}>
-            <Col><Image src={prod.img_main} alt="homerm" className='abaixo' onClick={() => { setImagemPrincipal(prod.img_main) }} /></Col>
-            <Col><Image src={prod.img_front} alt="homerm" className='abaixo' onClick={() => { setImagemPrincipal(prod.img_front) }} /></Col>
-            <Col><Image src={prod.img_right} alt="homerm" className='abaixo' onClick={() => { setImagemPrincipal(prod.img_left) }} /></Col>
-            <Col><Image src={prod.img_left} alt="homerm" className='abaixo' onClick={() => { setImagemPrincipal(prod.img_right) }} /></Col>
-            <Col><Image src={prod.img_back} alt="homerm" className='abaixo' onClick={() => { setImagemPrincipal(prod.img_back) }} /></Col>
+            <Col><Image src={prod.img_main} alt={prod.alt_img} className='abaixo' onClick={() => { setImagemPrincipal(prod.img_main) }} /></Col>
+            <Col><Image src={prod.img_front} alt={prod.alt_img} className='abaixo' onClick={() => { setImagemPrincipal(prod.img_front) }} /></Col>
+            <Col><Image src={prod.img_right} alt={prod.alt_img} className='abaixo' onClick={() => { setImagemPrincipal(prod.img_left) }} /></Col>
+            <Col><Image src={prod.img_left} alt={prod.alt_img} className='abaixo' onClick={() => { setImagemPrincipal(prod.img_right) }} /></Col>
+            <Col><Image src={prod.img_back} alt={prod.alt_img} className='abaixo' onClick={() => { setImagemPrincipal(prod.img_back) }} /></Col>
           </Row>
         </Container>
 
         <Container>
-          <h2 className='name'>{prod.nome}</h2>
+          <h2 className='name'>{prod.name}</h2>
           <div className='divisor cinza'></div>
           <div className='prices'>
-            <span className='tamanho desc_price text-cinza'>R$ {prod.desc_preco}</span>
-            <span className='tamanho price' >R$ {prod.price}</span>
+            <span className='tamanho price text-cinza'>R$ {prod.price}</span>
+            <span className='tamanho desc_price' >R$ {prod.desc_price}</span>
           </div>
 
           <p className='text-cinza description'>Ultimas únidades desse modelo aproveite!</p>
@@ -159,8 +143,8 @@ function Product() {
             </div>
         </div>
         <Container>
-          <p className='sub-description text-cinza'>SKU: 2938472874-AZUL</p>
-          <p className='sub-description text-cinza'>Categoria: {prod.categoria}</p>
+          <p className='sub-description text-cinza'>SKU: {prod.sku}</p>
+          <p className='sub-description text-cinza'>Categoria: {prod.category}</p>
           <p className='sub-description text-cinza'>TAG: Lançamentos</p>
 
         </Container>

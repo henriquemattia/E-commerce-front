@@ -44,7 +44,7 @@ function AppRouter() {
         
 
                 {/* PAGINA DE COMPRA DE PRODUTO */}
-        <Route path='/:categoria/:id' element={<Product/>} />
+        <Route path='/:category/:route' element={<Product/>} />
         <Route path='/carrinho' element={<Cart />} />
       </Routes>
     </BrowserRouter>

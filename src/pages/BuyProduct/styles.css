@@ -52,11 +52,11 @@
     margin-bottom: 5%;
 }
 
-.desc_price{
+.price{
     text-decoration: line-through;
 }
 
-.price {
+.desc_price {
     font-weight: 700;
     margin-left: 4%;
 }
