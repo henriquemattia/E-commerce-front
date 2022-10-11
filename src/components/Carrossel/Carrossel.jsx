@@ -1,8 +1,8 @@
 import Carousel from 'react-bootstrap/Carousel';
 
-import criancas from '../../images/carrossel/criancas-1.jpeg'
-import homens from '../../images/carrossel/homen-1.jpeg'
-import mulher from '../../images/carrossel/mulher-1.jpeg'
+import Masculino from '../../images/carrossel/masculino-carrossel.jpg'
+import Feminino from '../../images/carrossel/feminino-carrossel.jpg'
+import Acessorios from '../../images/carrossel/acessorios-carrossel.jpg'
 
 
 import './styles.css'
@@ -15,12 +15,12 @@ function Carrossel () {
           <Carousel.Item className='gg'>
             <img
               className="d-block w-100"
-              src={mulher}
+              src={Feminino}
               alt="First slide"
             />
             <Carousel.Caption>
-              <h3 className='titulo-1'>Promoção Moda Feminina</h3>
-              <p>Toda a moda Inverno/Verão Femenina você encontra aqui!</p>
+              <h5 className='titulo-1'>MODA FEMININA</h5>
+              <p>Novidades na moda Inverno/Verão</p>
             </Carousel.Caption>
           </Carousel.Item>
 
@@ -28,12 +28,12 @@ function Carrossel () {
           <Carousel.Item className='gg'>
             <img
               className="d-block w-100"
-              src={homens}
+                src={Masculino}
               alt="Second slide"
             />
             <Carousel.Caption>
-              <h3>Moda Masculina</h3>
-              <p>De moda esportiva a moda EXECUTIVA</p>
+              <h5>MODA MASCULINA</h5>
+              <p>Estilo e classe, você só encontra aqui!</p>
             </Carousel.Caption>
           </Carousel.Item>
 
@@ -41,16 +41,14 @@ function Carrossel () {
           <Carousel.Item className='gg'>
             <img
               className="d-block w-100"
-              src={criancas}
+              src={Acessorios}
               alt="Third slide"
             />
     
 
             <Carousel.Caption>
-              <h3>Moda infantil 2022</h3>
-              <p>
-                As melhores roupas para seu filho se divertir!
-              </p>
+              <h5>ACESSÓRIOS E CALÇADOS</h5>
+              <p>Tecnoligia e conforto</p>
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
