@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Row from 'react-bootstrap/esm/Row';
 import Container from 'react-bootstrap/esm/Container';
 
-import camisa from '../../../images/products/camisetao-laranja.webp'
-
 import Topbar from '../../../components/NavBar/NavBar';
 import { Link } from 'react-router-dom';
 import Post from '../../../components/Posts/Post/Post';

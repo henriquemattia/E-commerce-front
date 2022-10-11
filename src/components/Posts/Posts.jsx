@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
-import axios from 'axios'
-
 import Row from 'react-bootstrap/esm/Row';
 import Container from 'react-bootstrap/esm/Container';
 
-import camisa from '../../images/products/camisetao-laranja.webp'
 import Post from './Post/Post'
 
 import './styles.css'
-import { Link } from 'react-router-dom';
 
 import { api } from '../../services/api/Api';
 

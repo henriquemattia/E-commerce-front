@@ -2,9 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Row from 'react-bootstrap/esm/Row';
 import Container from 'react-bootstrap/esm/Container';
 
-import axios from 'axios';
 
-import camisa from '../../images/products/camisetao-laranja.webp'
+
 // import Molde from './Molde/Molde'
 
 import Topbar from '../../components/NavBar/NavBar';

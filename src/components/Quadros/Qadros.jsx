@@ -5,30 +5,30 @@ import Container from "react-bootstrap/esm/Container";
 
 import './styles.css'
 
-import Sporting from '../../images/quadros/tenis-1.png'
-import Feminino from '../../images/quadros/roupa-social-feminina-capa.jpg'
-import Infantil from '../../images/quadros/crianca.jpg'
-import Masculino from '../../images/quadros/homen.jpeg'
+import Masculino from '../../images/quadros/masculino-quadro.jpg'
+import Feminino from '../../images/quadros/feminino-quadro.jpg'
+import Acessorios from '../../images/quadros/acessorios-quadro.jpg'
+import Calcados from '../../images/quadros/calcados-quadro.jpg'
 
 const quadros = [
   {
     titulo: "MASCULINO",
-    image: 'https://i.imgur.com/hZQEDE2.jpeg',
+    image: Masculino,
     link: '/masculino',
   },
   {
     titulo: "FEMININO",
-    image: 'https://i.imgur.com/w9PmbmI.jpeg',
+    image: Feminino,
     link: '/feminino',
   },
   {
     titulo: "ACESSÓRIOS",
-    image: 'https://i.imgur.com/XO8MOWc.jpeg',
+    image: Acessorios,
     link: '/acessorios',
   },
   {
     titulo: "CALÇADOS",
-    image: 'https://i.imgur.com/vw06NX1.jpeg',
+    image: Calcados,
     link: '/calcados',
   },
 
