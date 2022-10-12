@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 
+//Styles
 import Row from 'react-bootstrap/esm/Row';
 import Container from 'react-bootstrap/esm/Container';
 
+//Sub-componente
 import Post from './Post/Post'
 
-import './styles.css'
-
+//Api
 import { api } from '../../services/api/Api';
 
 function Posts() {
@@ -18,24 +19,15 @@ function Posts() {
       const url = '/destaque'
       const res = await api.get(url)
        setDest(res.data.dados);
-       console.log(res.data.dados);
-      //  console.log(res.data.dados);
     } catch (err) {
       console.log(err);
     }
   }
-  
-
-
 
     useEffect(()=>{
       getProduts()
        return 
-       //()=>{
-    //     console.log('destruido');
-    // }
     },[])
-    //ver soibre RATIO opara as imagens respoeotarem um tanmanho
   return (
     <>
       <Container>
@@ -46,8 +38,6 @@ function Posts() {
 
             const desc_price = prod.desc_price
             const desc_price_correct = desc_price.toString().replace(".", ",")
-
-
 
             return (
               <Post 
@@ -63,7 +53,6 @@ function Posts() {
           })}
         </Row>
       </Container>
-
     </>
   )
 }
