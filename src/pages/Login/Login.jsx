@@ -32,11 +32,12 @@ function Login() {
             })
             
 
-
+            
             if(!res.data.token){
                 alert("Usuario ou senha incorretos")
             }else{
-                 navigate("/")
+                localStorage.setItem("token", res.data.token)
+                navigate("/")
                 }
               console.log(res);
             } catch (err) {

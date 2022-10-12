@@ -19,23 +19,22 @@ function Registro() {
 
     const submitForm = (data) => {
 
-
-
         if (data.password === data.confirmPassword) {
 
-            const getProduts = async () => {
-                
-                try {
-                  const url = '/register'
-                  const res = await api.post(url, {
-                    name: data.username,
-                    email: data.email,
-                    password: data.password,
-                })
+                const getProduts = async () => {
+                    
+                    try {
+                    const url = '/register'
+                    const res = await api.post(url, {
+                        name: data.username,
+                        email: data.email,
+                        password: data.password,
+                    })
                 if(!res.data.token){
                     alert("Email já cadastrado!")
                 }else{
-                     navigate("/login")
+                    localStorage.setItem("token", res.data.token)
+                    navigate("/login")
                     }
                 
                   console.log(res);

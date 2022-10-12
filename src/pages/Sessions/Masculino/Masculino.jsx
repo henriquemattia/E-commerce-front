@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/esm/Container';
 
 import Topbar from '../../../components/NavBar/NavBar';
 import Post from '../../../components/Posts/Post/Post';
+import Footer from '../../../components/Footer/Footer';
 
 import { api } from '../../../services/api/Api';
 
@@ -14,7 +15,7 @@ import { api } from '../../../services/api/Api';
 //ver soibre RATIO opara as imagens respoeotarem um tanmanho
 
 
- function Masculino() {
+function Masculino() {
 
   const [masculino, setMasculino] = useState([])
 
@@ -23,7 +24,7 @@ import { api } from '../../../services/api/Api';
       const url = '/masculino'
       const res = await api.get(url)
       // console.log(res);
-       setMasculino(res.data.dados);
+      setMasculino(res.data.dados);
       //  console.log(res.data.dados);
     } catch (err) {
       console.log(err);
@@ -31,39 +32,39 @@ import { api } from '../../../services/api/Api';
   }
 
 
-    useEffect(()=>{
-      getProduts()
-      console.log('componetne construido'); 
-      return ()=>{
-        console.log('destruido');
+  useEffect(() => {
+    getProduts()
+    console.log('componetne construido');
+    return () => {
+      console.log('destruido');
     }
-    },[])
-    return(
-      <>
-        <Topbar />
-        <br />
-        <br />
-        <br />
-          <Container>
-          <Row>
+  }, [])
+  return (
+    <>
+      <Topbar />
+      <br />
+      <br />
+      <br />
+      <Container>
+        <Row>
           {masculino.map((prod, index) => {
             return (
-              <Post 
-              key={index}
-              category={prod.category}
-              name={prod.name}
-              price={prod.price}
-              desc_price={prod.desc_price}
-              image={prod.img_main}
-              route={prod.route}
+              <Post
+                key={index}
+                category={prod.category}
+                name={prod.name}
+                price={prod.price}
+                desc_price={prod.desc_price}
+                image={prod.img_main}
+                route={prod.route}
               />
-            )  
+            )
           })}
-            </Row>
-        </Container>
-  
-      </>
-    )
+        </Row>
+      </Container>
+      <Footer />
+    </>
+  )
 }
 
 

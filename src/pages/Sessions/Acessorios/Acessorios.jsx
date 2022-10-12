@@ -3,10 +3,9 @@ import Row from 'react-bootstrap/esm/Row';
 import Container from 'react-bootstrap/esm/Container';
 
 import Topbar from '../../../components/NavBar/NavBar';
-import { Link } from 'react-router-dom';
 import Post from '../../../components/Posts/Post/Post';
+import Footer from '../../../components/Footer/Footer';
 
-import axios from 'axios';
 import { api } from '../../../services/api/Api';
 
 // import './styles.css'
@@ -16,7 +15,7 @@ import { api } from '../../../services/api/Api';
 //ver soibre RATIO opara as imagens respoeotarem um tanmanho
 
 
- function Acessorios() {
+function Acessorios() {
 
   const [acessorios, setAcessorios] = useState([])
 
@@ -25,7 +24,7 @@ import { api } from '../../../services/api/Api';
       const url = '/acessorios'
       const res = await api.get(url)
       // console.log(res);
-       setAcessorios(res.data.dados);
+      setAcessorios(res.data.dados);
       //  console.log(res.data.dados);
     } catch (err) {
       console.log(err);
@@ -33,39 +32,39 @@ import { api } from '../../../services/api/Api';
   }
 
 
-    useEffect(()=>{
-      getProduts()
-      console.log('componetne construido'); 
-      return ()=>{
-        console.log('destruido');
+  useEffect(() => {
+    getProduts()
+    console.log('componetne construido');
+    return () => {
+      console.log('destruido');
     }
-    },[])
-    return(
-      <>
-        <Topbar />
-        <br />
-        <br />
-        <br />
-          <Container>
-          <Row>
+  }, [])
+  return (
+    <>
+      <Topbar />
+      <br />
+      <br />
+      <br />
+      <Container>
+        <Row>
           {acessorios.map((prod, index) => {
             return (
-              <Post 
-              key={index}
-              category={prod.category}
-              name={prod.name}
-              price={prod.price}
-              desc_price={prod.desc_price}
-              image={prod.img_main}
-              route={prod.route}
+              <Post
+                key={index}
+                category={prod.category}
+                name={prod.name}
+                price={prod.price}
+                desc_price={prod.desc_price}
+                image={prod.img_main}
+                route={prod.route}
               />
-            )  
+            )
           })}
-            </Row>
-        </Container>
-  
-      </>
-    )
+        </Row>
+      </Container>
+      <Footer />
+    </>
+  )
 }
 
 

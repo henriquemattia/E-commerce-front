@@ -65,6 +65,7 @@ function Cart() {
                       <p>{prod.quantity}</p>
                       <button className='button_quantity' onClick={() => updateItemQuantity(prod.id, prod.quantity - 1)}> - </button>
                     </div>
+                    <p>{cartTotal}</p>
                   </div>
 
 

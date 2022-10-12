@@ -20,7 +20,7 @@ import Feminino from './pages/Sessions/Feminino/Feminino';
 import Calcados from './pages/Sessions/Calcados/Calcados';
 import Acessorios from './pages/Sessions/Acessorios/Acessorios';
 import Cart from './pages/Cart/Cart';
-
+import Sair from './components/Sair/Sair';
 
 
 function AppRouter() {
@@ -32,6 +32,8 @@ function AppRouter() {
                 {/* LOGIN E REGISTRO */}
         <Route  path='/login' element={<Login />} />
         <Route  path='/register' element={<Registro />} />
+        <Route  path='/logout' element={<Sair />} />
+        
          
                 {/* PRODUTOS POR CATEGORIA*/}
         <Route path='/masculino' element={<Masculino />}/>
