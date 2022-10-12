@@ -1,19 +1,16 @@
 import React, { useState, useEffect } from 'react';
+
+//Styles
 import Row from 'react-bootstrap/esm/Row';
 import Container from 'react-bootstrap/esm/Container';
 
+//Components
 import Topbar from '../../components/NavBar/NavBar';
 import Post from '../../components/Posts/Post/Post';
 import Footer from '../../components/Footer/Footer';
 
+//API
 import { api } from '../../services/api/Api';
-
-
-// import './styles.css'
-
-
-//colcoar tudo dentro de uma vide para tentar alinhar tudo confome vai almentando a tela
-//ver soibre RATIO opara as imagens respoeotarem um tanmanho
 
 
 function AllProducts() {
@@ -24,9 +21,7 @@ function AllProducts() {
     try {
       const url = '/produtos'
       const res = await api.get(url)
-      // console.log(res);
       setprodutos(res.data.dados);
-      //  console.log(res.data.dados);
     } catch (err) {
       console.log(err);
     }

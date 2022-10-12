@@ -1,31 +1,36 @@
 import React, { useState, useEffect } from 'react';
-import Container from 'react-bootstrap/esm/Container';
-import Topbar from '../../components/NavBar/NavBar';
-import Image from 'react-bootstrap/Image'
 
+//Styles
+import Container from 'react-bootstrap/esm/Container';
+import Col from 'react-bootstrap/esm/Col';
+import Row from 'react-bootstrap/esm/Row';
+import Image from 'react-bootstrap/Image'
 import './styles.css'
 
-import Row from 'react-bootstrap/esm/Row';
-import Col from 'react-bootstrap/esm/Col';
+//Components
+import Topbar from '../../components/NavBar/NavBar';
 import Footer from '../../components/Footer/Footer';
 import { useParams } from 'react-router-dom';
 
-
-import { useCart } from 'react-use-cart';
+//API / use cart
 import { api } from '../../services/api/Api';
+import { useCart } from 'react-use-cart';
 
 
 
 function Product() {
+
   const [dest, setDest] = useState([])
   const [prod, setProd] = useState([])
+  const parms = useParams()
+  const { addItem } = useCart();
+
 
   const getProduts = async () => {
     try {
       const url = '/produtos'
       const res = await api.get(url)
       setDest(res.data.dados);
-      // console.log(res.data.dados);
     } catch (err) {
       console.log(err);
     }
@@ -36,27 +41,19 @@ function Product() {
     return 
   }, [])
 
-  const parms = useParams()
-  // dest.find((p) => p.route === parms.route)
-
   useEffect(() => {
     dest.map((nam) => {
       if (nam.route == parms.route) {
-        // console.log(nam)
-
         setProd(nam)
       }
     }
     )
   }, [dest])
 
-
   //// LÓGICA PARA TROCA DE FOCO DE PRODUTO
-
   const [imagemPrincipal, setImagemPrincipal] = useState([])
 
   useEffect(() => {
-
     setImagemPrincipal(prod.img_main)
   }, [prod])
 
@@ -64,13 +61,9 @@ function Product() {
   const [qntProd, setQntProd] = useState(0)
 
   useEffect(() => {
-
     setQntProd(1)
   }, [])
 
-  const { addItem } = useCart();
-
-  
   return (
     <>
       <div className='all'>
