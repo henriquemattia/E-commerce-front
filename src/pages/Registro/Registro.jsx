@@ -34,7 +34,7 @@ function Registro() {
                     alert("Email já cadastrado!")
                 }else{
                     localStorage.setItem("token", res.data.token)
-                    navigate("/login")
+                    navigate("/")
                     }
                 
                   console.log(res);

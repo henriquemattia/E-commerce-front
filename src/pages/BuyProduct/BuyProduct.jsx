@@ -23,7 +23,7 @@ function Product() {
   const [dest, setDest] = useState([])
   const [prod, setProd] = useState([])
   const parms = useParams()
-  const { addItem } = useCart();
+  const { addItem, updateItemQuantity} = useCart();
 
 
   const getProduts = async () => {
@@ -70,7 +70,7 @@ function Product() {
         <Topbar />
 
         <Container>
-          <Image src={imagemPrincipal} alt="homerm" className='imagem1' />
+          <Image src={imagemPrincipal} alt={prod.alt_img} className='imagem1' />
           <Row xs={5}>
             <Col><Image src={prod.img_main} alt={prod.alt_img} className='abaixo' onClick={() => { setImagemPrincipal(prod.img_main) }} /></Col>
             <Col><Image src={prod.img_front} alt={prod.alt_img} className='abaixo' onClick={() => { setImagemPrincipal(prod.img_front) }} /></Col>
@@ -120,7 +120,11 @@ function Product() {
 
 
             </div>
-            <button className='buy-btn' onClick={() => addItem(prod)}>COMPRAR</button>
+            <button className='buy-btn' onClick={() => {
+              addItem(prod)
+              updateItemQuantity(prod.id, qntProd);
+            }
+          }>COMPRAR</button>
           </div>
         </div>
         <br />
