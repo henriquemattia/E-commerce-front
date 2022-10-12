@@ -1,10 +1,11 @@
-import Quadro from "./Quadro/Quadro";
-
+//Styles
 import Row from "react-bootstrap/esm/Row";
 import Container from "react-bootstrap/esm/Container";
-
 import './styles.css'
 
+import Quadro from "./Quadro/Quadro";
+
+//Imagens dos quadros
 import Masculino from '../../images/quadros/masculino-quadro.jpg'
 import Feminino from '../../images/quadros/feminino-quadro.jpg'
 import Acessorios from '../../images/quadros/acessorios-quadro.jpg'
