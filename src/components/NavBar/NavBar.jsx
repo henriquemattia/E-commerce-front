@@ -56,7 +56,7 @@ function Topbar() {
                   <Nav.Link href="/acessorios">ACESSÓRIOS</Nav.Link>
                   <Nav.Link href="/calcados">CALÇADOS</Nav.Link>
 
-                  <NavDropdown title='Mais opcões'>
+                  <NavDropdown title='Opçoes de conta'>
                       <NavDropdown.Item eventKey="4.1" href='/login' >Login</NavDropdown.Item>
                       <NavDropdown.Item eventKey="4.2" href='register'>Cadastre-se</NavDropdown.Item>
                     <LogOut />
