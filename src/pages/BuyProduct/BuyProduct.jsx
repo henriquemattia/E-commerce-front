@@ -23,7 +23,7 @@ function Product() {
   const [dest, setDest] = useState([])
   const [prod, setProd] = useState([])
   const parms = useParams()
-  const { addItem, updateItemQuantity} = useCart();
+  const { addItem } = useCart();
 
 
   const getProduts = async () => {
@@ -122,7 +122,6 @@ function Product() {
             </div>
             <button className='buy-btn' onClick={() => {
               addItem(prod)
-              updateItemQuantity(prod.id, qntProd);
             }
           }>COMPRAR</button>
           </div>
