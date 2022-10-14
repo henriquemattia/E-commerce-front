@@ -4,9 +4,9 @@ import './styles.css'
 
 
 //Imagens do carrossel
-import Masculino from '../../images/carrossel/masculino-carrossel.jpg'
-import Feminino from '../../images/carrossel/feminino-carrossel.jpg'
-import Acessorios from '../../images/carrossel/acessorios-carrossel.jpg'
+import Masculino from '../../images/carrossel/masculino-carrossel.webp'
+import Feminino from '../../images/carrossel/feminino-carrossel.webp'
+import Acessorios from '../../images/carrossel/acessorios-carrossel.webp'
 
 function Carrossel() {
   return (

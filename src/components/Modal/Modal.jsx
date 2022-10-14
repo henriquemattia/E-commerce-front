@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
 
+//styles
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image'
+
 //Imagens
-import Passo1 from '../../images/modal/passo-1.jpg'
-import Passo2 from '../../images/modal/passo-2.jpg'
-import Passo3 from '../../images/modal/passo-3.jpg'
-import { renderMatches } from 'react-router-dom';
+import Passo1 from '../../images/modal/passo-1.webp'
+import Passo2 from '../../images/modal/passo-2.webp'
+import Passo3 from '../../images/modal/passo-3.webp'
 
 
 
