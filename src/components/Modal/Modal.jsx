@@ -35,7 +35,7 @@ function Modelo(props) {
           <strong>Caso você estiver utilizando um celular pode ignorar essa mensagem e seguir em frente.</strong>
           <br />
           <br />
-          <p>Caso voê estiver em um <strong>computador/notbook</strong> siga o passo a passo a baixo...</p>
+          <p>Caso você estiver em um <strong>computador/notbook</strong> siga o passo a passo abaixo...</p>
           <br />
           <p><strong>Passo-1:</strong> Clique com o botão direito do seu mouse na tela e depois clique em "inspecionar".</p>
           <br />

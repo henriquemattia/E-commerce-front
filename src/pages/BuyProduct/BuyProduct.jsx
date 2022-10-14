@@ -10,7 +10,7 @@ import './styles.css'
 //Components
 import Topbar from '../../components/NavBar/NavBar';
 import Footer from '../../components/Footer/Footer';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 //API / use cart
 import { api } from '../../services/api/Api';
@@ -20,6 +20,7 @@ import { useCart } from 'react-use-cart';
 
 function Product() {
 
+  const navigate = useNavigate()
   const [dest, setDest] = useState([])
   const [prod, setProd] = useState([])
   const parms = useParams()
@@ -122,6 +123,7 @@ function Product() {
             </div>
             <button className='buy-btn' onClick={() => {
               addItem(prod)
+              navigate("/carrinho")
             }
           }>COMPRAR</button>
           </div>
