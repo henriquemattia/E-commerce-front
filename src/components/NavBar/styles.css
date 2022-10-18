@@ -25,3 +25,7 @@ a.dropdown-item{
     background-color: rgb(35, 35, 35);
     color: rgb(216, 216, 216);
 }
+
+.margin{
+    margin-top: 8px;
+}
