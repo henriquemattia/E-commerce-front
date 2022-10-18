@@ -6,10 +6,12 @@ import axios from 'axios';
 import Container from 'react-bootstrap/esm/Container';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import TopBar from '../../components/NavBar/NavBar'
 
 import { Link, useNavigate } from 'react-router-dom';
 import { api } from '../../services/api/Api';
 
+import './styles.css'
 
 
 
@@ -46,31 +48,17 @@ function Login() {
           } 
           getProduts()
         reset()
-
-            // fetch(`${api}/login`, reqOptions)
-            // .then(res => res.json())
-            // .then((data) =>{
-            //     console.log(data);
-            //     if (!data.token) {
-            //         alert("Usuario ou senha incorretos");
-                    
-            //     } else {
-            //         navigate("/")
-            //     }
-            // })
-            // .catch(err =>console.log(err))
-            // reset()
-
-            
+ 
     }
 
     
 
 
     return (
-        <>
+        <>  
+            <TopBar />
             <Container>
-                <h1 className='centro'>Login</h1>
+                <h1 className='title'>Login</h1>
                 <br />
                 <Form>
 
@@ -78,9 +66,11 @@ function Login() {
                     {/* EMAIL */}
 
 
-                    <Form.Group className="mb-3" controlId="formGroupEmail">
+                    <Form.Group className="mb-3 " controlId="formGroupEmail">
                         <Form.Label>Email</Form.Label>
-                        <Form.Control type="email"
+                        <Form.Control 
+                            className='rounded-0'
+                            type="email"
                             placeholder="Email"
                             {...register("email", { required: true, maxLength: 70 })}
                         />
@@ -95,7 +85,9 @@ function Login() {
 
                     <Form.Group className="mb-3" controlId="formGroupPassword">
                         <Form.Label>Senha</Form.Label>
-                        <Form.Control type="password"
+                        <Form.Control 
+                            className='rounded-0'
+                            type="password"
                             placeholder="Senha"
                             {...register("password", { required: true, minLength: 8 })}
                         />
@@ -106,7 +98,7 @@ function Login() {
 
 
                     <Form.Group>
-                        <Button type='submit' variant="primary" onClick={handleSubmit(submitForm)}>SingUp</Button>
+                        <button className='login_button' type='submit'onClick={handleSubmit(submitForm)}>Login</button>
                     </Form.Group>
 
                     <Form.Group>

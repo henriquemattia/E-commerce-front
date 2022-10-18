@@ -19,7 +19,7 @@ function LogOut() {
     return (
       <>
         <NavDropdown.Divider />
-        <NavDropdown.Item eventKey="4.3" href='/logout'>Sair</NavDropdown.Item>
+        <NavDropdown.Item eventKey="4.3" href='/logout' style={{color: "red"}} >Sair</NavDropdown.Item>
       </>
     )
   } else {
@@ -63,8 +63,8 @@ function Topbar() {
                     <LogOut />
                   </NavDropdown>
                 </Nav>
-                
                 <Form className="d-flex">
+                  
                   <Form.Control
                     type="search"
                     placeholder="Search"

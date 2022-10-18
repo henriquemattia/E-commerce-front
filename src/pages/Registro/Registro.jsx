@@ -8,7 +8,7 @@ import Button from 'react-bootstrap/Button';
 import { Link, useNavigate } from 'react-router-dom';
 import { api } from '../../services/api/Api';
 
-
+import TopBar from '../../components/NavBar/NavBar'
 
 function Registro() {
 
@@ -54,8 +54,9 @@ function Registro() {
 
     return (
         <>
+            <TopBar />
             <Container>
-                <h1 className='centro'> Cadastre-se</h1>
+                <h1 className='title'> Cadastre-se</h1>
                 <br />
                 <Form>
 
@@ -64,6 +65,7 @@ function Registro() {
                     <Form.Group className="mb-3 asda" controlId="formGroupName">
                         <Form.Label>Nome</Form.Label>
                         <Form.Control 
+                            className='rounded-0'
                             type="text"
                             placeholder="Nome completo"
                             {...register("username", { required: true, maxLength: 25 })}
@@ -80,7 +82,9 @@ function Registro() {
 
                     <Form.Group className="mb-3" controlId="formGroupEmail">
                         <Form.Label>Email</Form.Label>
-                        <Form.Control type="email"
+                        <Form.Control 
+                            className='rounded-0'
+                            type="email"
                             placeholder="Insira seu melhor email!!"
                             {...register("email", { required: true, maxLength: 70 })}
                         />
@@ -95,7 +99,9 @@ function Registro() {
 
                     <Form.Group className="mb-3" controlId="formGroupPassword">
                         <Form.Label>Senha</Form.Label>
-                        <Form.Control type="password"
+                        <Form.Control 
+                            className='rounded-0'
+                            type="password"
                             placeholder="Senha"
                             {...register("password", { required: true, minLength: 8 })}
                         />
@@ -110,7 +116,10 @@ function Registro() {
 
                     <Form.Group className="mb-3">
                         <Form.Label>Confime sua Senha</Form.Label>
-                        <Form.Control type="password" placeholder="A senha deve ser igual a senha acima"
+                        <Form.Control 
+                        className='rounded-0'
+                        type="password" 
+                        placeholder="A senha deve ser igual a senha acima"
                             {...register("confirmPassword", { required: true, minLength: 8 })}
                         />
 
@@ -121,7 +130,7 @@ function Registro() {
 
 
                     <Form.Group>
-                        <Button type='submit' variant="primary" onClick={handleSubmit(submitForm)}>SingUp</Button>
+                        <button className='login_button' type='submit' variant="primary" onClick={handleSubmit(submitForm)}>Cadastrar-se</button>
                     </Form.Group>
 
                     <Form.Group>

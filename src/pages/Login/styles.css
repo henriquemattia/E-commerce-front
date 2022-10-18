@@ -1,0 +1,12 @@
+.login_button{
+    color: white;
+    background-color: rgb(0, 0, 0);
+    width: 33%;
+    border: none;
+    height: 5vh;
+    padding: 8px;
+}
+
+.title{
+    margin-top: 10vh;
+}
