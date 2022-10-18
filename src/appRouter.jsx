@@ -29,6 +29,7 @@ function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
+
         <Route path='/' index element={<Home />} />
 
                 {/* LOGIN E REGISTRO */}

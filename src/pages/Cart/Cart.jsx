@@ -9,6 +9,7 @@ import Card from 'react-bootstrap/Card'
 import './style.css';
 import { useCart } from 'react-use-cart';
 import Button from 'react-bootstrap/esm/Button';
+import Container from 'react-bootstrap/esm/Container';
 
 function Cart() {
 
@@ -25,11 +26,31 @@ function Cart() {
   // CARRINHO VAZIO
   if (isEmpty) {
     return (
-      <>
+      <Container>
         <Topbar />
         <div className='container_body'></div>
-        <h1>Seu carrinho está vazio :( </h1>
-      </>
+        <h1 className='cart_empty'>Seu carrinho está vazio :( </h1>
+            <div className='cart_desc'>
+                <h5 className='cart_title' >TOTAL NO CARRINHO</h5>
+
+                <div className='cart_subtotal'>
+                  <span style={{ color: 'gray' }}>Subtotal</span><span>R$ {Math.round(cartTotal)},00</span>
+                </div>
+
+                <div className='cart_entrega'>
+                  <span>Entrega</span><span>Calcular entrega</span>
+                </div>
+
+                <div className='cart_total'>
+                  <span style={{ color: 'gray' }}>Total</span><span>R$ {Math.round(cartTotal)},00</span>
+                </div>
+              </div>
+            <div className='container_button'>
+              <button className='button_finish'>IR PARA AS COMPRAS</button>
+            </div>
+          
+        <Footer />
+      </Container>
 
     );
   }
@@ -40,10 +61,10 @@ function Cart() {
       <div className='container_body'>
         <h1>CARRINHO</h1>
         <div className='container_produtos'>
-            {items.map((prod) => {
-              const price = prod.price
-              const price_correct = price.toString().replace(".", ",")
-              return (
+          {items.map((prod) => {
+            const price = prod.price
+            const price_correct = price.toString().replace(".", ",")
+            return (
               <>
                 <div key={prod.id} className='contianer_main'>
                   <div className='left_content'>
@@ -54,7 +75,7 @@ function Cart() {
                     <p>1x de <span>{price_correct}</span></p>
                   </div>
                   <div className='rigth_content'>
-                      <button className='close_button' onClick={() => removeItem(prod.id)}>&times;</button>
+                    <button className='close_button' onClick={() => removeItem(prod.id)}>&times;</button>
                     <div className='button_content'>
                       <button className='button_quantity' onClick={() => updateItemQuantity(prod.id, prod.quantity + 1)}> + </button>
                       <p>{prod.quantity}</p>
@@ -63,30 +84,30 @@ function Cart() {
                   </div>
                 </div>
               </>
-              )
-            })}
+            )
+          })}
         </div>
             <div className='cart_desc'>
-              <h5 className='cart_title' >TOTAL NO CARRINHO</h5>
-              
-              <div className='cart_subtotal'>
-                <span style={{color: 'gray'}}>Subtotal</span><span>R$ {Math.round(cartTotal)},00</span>
-              </div>
+                <h5 className='cart_title' >TOTAL NO CARRINHO</h5>
 
-              <div className='cart_entrega'>
-                <span>Entrega</span><span>Calcular entrega</span>
-              </div>
+                <div className='cart_subtotal'>
+                  <span style={{ color: 'gray' }}>Subtotal</span><span>R$ {Math.round(cartTotal)},00</span>
+                </div>
 
-              <div className='cart_total'>
-                <span style={{color: 'gray'}}>Total</span><span>R$ {Math.round(cartTotal)},00</span>
+                <div className='cart_entrega'>
+                  <span>Entrega</span><span>Calcular entrega</span>
+                </div>
+
+                <div className='cart_total'>
+                  <span style={{ color: 'gray' }}>Total</span><span>R$ {Math.round(cartTotal)},00</span>
+                </div>
               </div>
-            </div>
             <div className='container_button'>
               <button className='button_finish'>FINALIZAR COMPRA</button>
             </div>
 
 
-            <Footer />
+        <Footer />
 
       </div>
 

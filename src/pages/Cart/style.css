@@ -141,3 +141,14 @@
     font-size: 1.6rem;
     padding: 20px;
 }
+
+
+/* CART EMPTY */
+
+.cart_empty{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    color: rgba(128, 128, 128, 0.581);
+}
