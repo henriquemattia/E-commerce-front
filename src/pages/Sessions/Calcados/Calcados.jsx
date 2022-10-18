@@ -24,8 +24,7 @@ function Calcados() {
       const url = '/calcados'
       const res = await api.get(url)
       // console.log(res);
-      setCalcados(res.data.dados);
-      //  console.log(res.data.dados);
+      setCalcados(res.data);
     } catch (err) {
       console.log(err);
     }

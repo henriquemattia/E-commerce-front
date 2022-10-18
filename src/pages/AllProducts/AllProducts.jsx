@@ -21,7 +21,7 @@ function AllProducts() {
     try {
       const url = '/produtos'
       const res = await api.get(url)
-      setprodutos(res.data.dados);
+      setprodutos(res.data);
     } catch (err) {
       console.log(err);
     }

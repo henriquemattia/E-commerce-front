@@ -24,8 +24,7 @@ function Acessorios() {
       const url = '/acessorios'
       const res = await api.get(url)
       // console.log(res);
-      setAcessorios(res.data.dados);
-      //  console.log(res.data.dados);
+      setAcessorios(res.data);
     } catch (err) {
       console.log(err);
     }

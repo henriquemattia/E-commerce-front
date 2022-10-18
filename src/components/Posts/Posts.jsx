@@ -18,7 +18,7 @@ function Posts() {
     try {
       const url = '/destaque'
       const res = await api.get(url)
-       setDest(res.data.dados);
+       setDest(res.data);
     } catch (err) {
       console.log(err);
     }

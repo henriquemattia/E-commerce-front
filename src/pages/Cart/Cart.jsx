@@ -1,12 +1,14 @@
 import React from 'react';
 import Topbar from '../../components/NavBar/NavBar';
 import Post from '../../components/Posts/Post/Post';
+import Footer from '../../components/Footer/Footer';
 
 import Card from 'react-bootstrap/Card'
 
 
 import './style.css';
 import { useCart } from 'react-use-cart';
+import Button from 'react-bootstrap/esm/Button';
 
 function Cart() {
 
@@ -63,11 +65,12 @@ function Cart() {
               </>
               )
             })}
+        </div>
             <div className='cart_desc'>
               <h5 className='cart_title' >TOTAL NO CARRINHO</h5>
               
               <div className='cart_subtotal'>
-                <span>Subtotal</span><span>R$ {Math.round(cartTotal)}</span>
+                <span style={{color: 'gray'}}>Subtotal</span><span>R$ {Math.round(cartTotal)},00</span>
               </div>
 
               <div className='cart_entrega'>
@@ -75,15 +78,15 @@ function Cart() {
               </div>
 
               <div className='cart_total'>
-                <span>Total</span><span>R$ {Math.round(cartTotal)}</span>
+                <span style={{color: 'gray'}}>Total</span><span>R$ {Math.round(cartTotal)},00</span>
               </div>
-              
-            
+            </div>
+            <div className='container_button'>
+              <button className='button_finish'>FINALIZAR COMPRA</button>
             </div>
 
-        </div>
 
-
+            <Footer />
 
       </div>
 

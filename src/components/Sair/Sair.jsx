@@ -14,13 +14,15 @@ function Sair() {
         const url = '/logout'
         await api.post(url, {
             "token": token
+            // "Authorization": `Bearer  ${token}`
         }).then(response => {
             if (response.status == 200) {
                 localStorage.removeItem("token")
                 navigate("/")
                 console.log('conta exluida com sucesso')
-            } else if (response.status == 400 || 422) {
+            } else if (response.status == 400 || 422 ) {
                 alert('ERRO AO DELETAR CONTA')
+                
             }
         })
     }

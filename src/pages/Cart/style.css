@@ -85,21 +85,59 @@
 
 
 .cart_desc{
-    border: solid red 1px;
+    /* border: solid red 1px; */
     margin-top: 3vh;
     width: 100%;
 }
 
 .cart_title{
     margin-bottom: 3vh;
-    padding: 10px;
-    border-bottom: 2px solid rgba(128, 128, 128, 0.531);
+    padding: 10px 0;
+    color: gray;
+    border-bottom: 3px solid rgba(128, 128, 128, 0.322);
 }
 
 
 .cart_subtotal{
-    border: solid blue 1px;
+    border-bottom: solid rgba(128, 128, 128, 0.197) 1px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: 10px 0;
+}
+
+.cart_entrega{
+    color: gray;
+    border-bottom: solid rgba(128, 128, 128, 0.197) 1px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 0;
+
+}
+
+.cart_total{
+    border-bottom: solid rgba(128, 128, 128, 0.249) 3px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 0; 
+    margin-bottom: 5vh;
+}
+
+.container_button{
+    border-bottom: solid rgba(128, 128, 128, 0.324) 3px;
+    width: 100%;
+    margin-bottom: 7vh;
+    padding-bottom: 20px;
+}
+
+.button_finish{
+    width: 100%;
+    height: auto;
+    background-color: rgb(31, 31, 31);
+    color: white;
+    font-size: 1.6rem;
+    padding: 20px;
 }

@@ -24,14 +24,14 @@ function Product() {
   const [dest, setDest] = useState([])
   const [prod, setProd] = useState([])
   const parms = useParams()
+  
   const { addItem } = useCart();
-
 
   const getProduts = async () => {
     try {
       const url = '/produtos'
       const res = await api.get(url)
-      setDest(res.data.dados);
+      setDest(res.data);
     } catch (err) {
       console.log(err);
     }

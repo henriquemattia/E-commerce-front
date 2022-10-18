@@ -24,8 +24,7 @@ function Masculino() {
       const url = '/masculino'
       const res = await api.get(url)
       // console.log(res);
-      setMasculino(res.data.dados);
-      //  console.log(res.data.dados);
+      setMasculino(res.data);
     } catch (err) {
       console.log(err);
     }

@@ -21,8 +21,7 @@ function Feminino() {
       const url = '/feminino'
       const res = await api.get(url)
       // console.log(res);
-      setFeminino(res.data.dados);
-      //  console.log(res.data.dados);
+      setFeminino(res.data);
     } catch (err) {
       console.log(err);
     }
