@@ -82,3 +82,24 @@
     background-color: white;
     border: none;
 }
+
+
+.cart_desc{
+    border: solid red 1px;
+    margin-top: 3vh;
+    width: 100%;
+}
+
+.cart_title{
+    margin-bottom: 3vh;
+    padding: 10px;
+    border-bottom: 2px solid rgba(128, 128, 128, 0.531);
+}
+
+
+.cart_subtotal{
+    border: solid blue 1px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

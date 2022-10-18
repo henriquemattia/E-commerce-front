@@ -25,13 +25,12 @@ function Cart() {
     return (
       <>
         <Topbar />
-        <p>Your cart is empty</p>
-        <h1>va comrpar mais coisas, ATGOR!!</h1>
+        <div className='container_body'></div>
+        <h1>Seu carrinho está vazio :( </h1>
       </>
 
     );
   }
-  // CARRINHO COM ALGUMA COISA DENTRO 
   return (
     <>
       <Topbar />
@@ -42,14 +41,8 @@ function Cart() {
             {items.map((prod) => {
               const price = prod.price
               const price_correct = price.toString().replace(".", ",")
-  
-              // const desc_price = prod.desc_price
-              // const desc_price_correct = desc_price.toString().replace(".", ",")
-  
               return (
               <>
-              
-
                 <div key={prod.id} className='contianer_main'>
                   <div className='left_content'>
                     <img className='product_image' src={prod.img_main} alt="" />
@@ -68,10 +61,25 @@ function Cart() {
                   </div>
                 </div>
               </>
-
               )
-
             })}
+            <div className='cart_desc'>
+              <h5 className='cart_title' >TOTAL NO CARRINHO</h5>
+              
+              <div className='cart_subtotal'>
+                <span>Subtotal</span><span>R$ {Math.round(cartTotal)}</span>
+              </div>
+
+              <div className='cart_entrega'>
+                <span>Entrega</span><span>Calcular entrega</span>
+              </div>
+
+              <div className='cart_total'>
+                <span>Total</span><span>R$ {Math.round(cartTotal)}</span>
+              </div>
+              
+            
+            </div>
 
         </div>
 
