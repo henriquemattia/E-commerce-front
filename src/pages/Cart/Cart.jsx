@@ -1,18 +1,17 @@
 import React from 'react';
 import Topbar from '../../components/NavBar/NavBar';
-import Post from '../../components/Posts/Post/Post';
 import Footer from '../../components/Footer/Footer';
-
-import Card from 'react-bootstrap/Card'
-
 
 import './style.css';
 import { useCart } from 'react-use-cart';
-import Button from 'react-bootstrap/esm/Button';
 import Container from 'react-bootstrap/esm/Container';
 
-function Cart() {
+import { useNavigate } from 'react-router-dom'
 
+
+function Cart() {
+  const navigate = useNavigate()
+ 
 
   const {
     isEmpty,
@@ -46,7 +45,7 @@ function Cart() {
                 </div>
               </div>
             <div className='container_button'>
-              <button className='button_finish'>IR PARA AS COMPRAS</button>
+              <button className='button_finish' onClick={()=>{navigate('/')}}>IR PARA AS COMPRAS</button>
             </div>
           
         <Footer />
