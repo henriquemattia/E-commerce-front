@@ -20,7 +20,7 @@ function Post(props) {
                             <div className='post-name'>{props.name}</div>
 
                             <div className='post-price'>
-                                <p>DE: R$: {props.price}</p>
+                                <p className='line_price'>DE: R$: {props.price}</p>
                                 <p>POR: R$: {props.desc_price}</p>
                             </div>
 

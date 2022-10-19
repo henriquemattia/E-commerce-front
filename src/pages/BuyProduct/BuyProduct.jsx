@@ -64,6 +64,7 @@ function Product() {
   useEffect(() => {
     setQntProd(1)
   }, [])
+  
 
   return (
     <>
