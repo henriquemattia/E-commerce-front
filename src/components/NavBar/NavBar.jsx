@@ -50,13 +50,13 @@ function Topbar() {
               <Offcanvas.Body className="blac mj">
 
                 <Nav className="justify-content-end flex-grow-1 pe-3 blac">
-                  <Nav.Link href="/produtos"><h5>TODOS OS PORDUTOS</h5></Nav.Link>
+                  <Nav.Link href="/produtos"><h5>TODOS OS PRODUTOS</h5></Nav.Link>
                   <Nav.Link href="/masculino">MASCULINO</Nav.Link>
                   <Nav.Link href="/feminino">FEMININO</Nav.Link>
                   <Nav.Link href="/acessorios">ACESSÓRIOS</Nav.Link>
                   <Nav.Link href="/calcados">CALÇADOS</Nav.Link>
                   
-                  <NavDropdown title='Opçoes de conta'>
+                  <NavDropdown title='Opções de conta'>
                       <NavDropdown.Item eventKey="4.1" href='/login' >Login</NavDropdown.Item>
                       <NavDropdown.Item eventKey="4.2" href='register'>Cadastre-se</NavDropdown.Item>
                     <LogOut />
