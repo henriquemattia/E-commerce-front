@@ -86,8 +86,8 @@ function Product() {
           <h2 className='name'>{prod.name}</h2>
           <div className='divisor cinza'></div>
           <div className='prices'>
-            <span className='tamanho price text-cinza'>R$ {prod.price}</span>
-            <span className='tamanho desc_price' >R$ {prod.desc_price}</span>
+            <span className='tamanho price text-cinza'>R$ {prod.desc_price}</span>
+            <span className='tamanho desc_price' >R$ {prod.price}</span>
           </div>
 
           <p className='text-cinza description'>Ultimas únidades desse modelo aproveite!</p>
