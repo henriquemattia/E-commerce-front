@@ -48,7 +48,7 @@ function Carrossel() {
 
         <Carousel.Caption>
           <h5>ACESSÓRIOS E CALÇADOS</h5>
-          <p>Tecnoligia e conforto</p>
+          <p>Tecnologia e conforto</p>
         </Carousel.Caption>
         
       </Carousel.Item>
