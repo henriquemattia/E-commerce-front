@@ -20,8 +20,8 @@ function Post(props) {
                             <div className='post-name'>{props.name}</div>
 
                             <div className='post-price'>
-                                <p className='line_price'>DE: R$: {props.price}</p>
-                                <p>POR: R$: {props.desc_price}</p>
+                                <p className='line_price'>DE: R$: {props.desc_price}</p>
+                                <p>POR: R$: {props.price}</p>
                             </div>
 
                         </Card.Body>

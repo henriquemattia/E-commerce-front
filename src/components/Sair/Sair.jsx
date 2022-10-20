@@ -14,7 +14,6 @@ function Sair() {
         const url = '/logout'
         await api.post(url, {
             "token": token
-            // "Authorization": `Bearer  ${token}`
         }).then(response => {
             if (response.status == 200) {
                 localStorage.removeItem("token")
